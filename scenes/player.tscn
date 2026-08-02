@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://f1uag5cn8vde"]
+
+[ext_resource type="Script" uid="uid://b6q12tpufmjh8" path="res://scripts/player.gd" id="1_3vyb7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ka64"]
+bg_color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ka64"]
+size = Vector2(64, 64)
+
+[node name="player" type="CharacterBody2D" unique_id=316219054]
+script = ExtResource("1_3vyb7")
+
+[node name="texture" type="Panel" parent="." unique_id=1191240159]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ka64")
+
+[node name="htibox" type="CollisionShape2D" parent="." unique_id=1183438935]
+shape = SubResource("RectangleShape2D_7ka64")

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://q7h2arka4sxg"]
+
+[ext_resource type="PackedScene" uid="uid://f1uag5cn8vde" path="res://scenes/player.tscn" id="1_y6wjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ka64"]
+size = Vector2(1536, 64)
+
+[node name="physics_test" type="Node2D" unique_id=1768076693]
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1324242731]
+position = Vector2(576, 608)
+color = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+polygon = PackedVector2Array(-1088, 192, -480, -320, -192, -128, 256, -416, 544, -224, 640, -256, 864, 96)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=700441284]
+position = Vector2(576, 608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=65682718]
+shape = SubResource("RectangleShape2D_7ka64")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" unique_id=558240145]
+color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+polygon = PackedVector2Array(-768, -32, 768, -32, 768, 32, -768, 32)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1705290854]
+position = Vector2(576, 672)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1569506553]
+shape = SubResource("RectangleShape2D_7ka64")
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2" unique_id=461713070]
+color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+polygon = PackedVector2Array(-768, -32, 768, -32, 768, 32, -768, 32)
+
+[node name="player" parent="." unique_id=316219054 instance=ExtResource("1_y6wjb")]
+position = Vector2(160, 128)
+max_speed = 350
+jump_strength = 500
+acceleration = 1000
+friction = 1700
