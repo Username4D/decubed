@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://vynfktfqy0kk"]
+
+[ext_resource type="Script" uid="uid://c42u83ud05tal" path="res://scripts/spike.gd" id="1_ljd5v"]
+
+[node name="spike" type="Area2D" unique_id=521260032]
+script = ExtResource("1_ljd5v")
+
+[node name="hitbox" type="CollisionPolygon2D" parent="." unique_id=1534420131]
+position = Vector2(0, 4.4)
+scale = Vector2(0.705, 0.705)
+polygon = PackedVector2Array(24, 32, -24, 32, 0, -16)
+
+[node name="texture" type="Polygon2D" parent="." unique_id=1323001248]
+color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+polygon = PackedVector2Array(0, -16, 24, 32, -24, 32)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

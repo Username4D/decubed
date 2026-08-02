@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://q7h2arka4sxg"]
 
 [ext_resource type="PackedScene" uid="uid://f1uag5cn8vde" path="res://scenes/player.tscn" id="1_y6wjb"]
+[ext_resource type="PackedScene" uid="uid://vynfktfqy0kk" path="res://scenes/spike.tscn" id="2_bcpvd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ka64"]
 size = Vector2(1536, 64)
@@ -38,3 +39,12 @@ max_speed = 350
 jump_strength = 500
 acceleration = 1000
 friction = 1700
+
+[node name="spike" parent="." unique_id=521260032 instance=ExtResource("2_bcpvd")]
+position = Vector2(480, 544)
+
+[node name="spike2" parent="." unique_id=1098475893 instance=ExtResource("2_bcpvd")]
+position = Vector2(544, 544)
+
+[node name="spike3" parent="." unique_id=776006012 instance=ExtResource("2_bcpvd")]
+position = Vector2(608, 544)
