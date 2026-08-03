@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://blujvfd5uvcn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ka64"]
+size = Vector2(64, 64)
+
+[node name="wall" type="StaticBody2D" unique_id=46745935]
+
+[node name="texture" type="Polygon2D" parent="." unique_id=1044894577]
+color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=2133874306]
+shape = SubResource("RectangleShape2D_7ka64")
