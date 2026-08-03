@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vynfktfqy0kk" path="res://scenes/spike.tscn" id="2_58o6h"]
 [ext_resource type="PackedScene" uid="uid://f1uag5cn8vde" path="res://scenes/player.tscn" id="3_8rhjg"]
 [ext_resource type="PackedScene" uid="uid://iktdgmf2qqul" path="res://scenes/finish.tscn" id="4_58o6h"]
+[ext_resource type="FontFile" uid="uid://b5vcbblf15tfs" path="res://assets/Raleway-VariableFont_wght.ttf" id="6_krm4r"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_krm4r"]
 scenes/1/scene = ExtResource("1_bkdr1")
@@ -196,7 +197,14 @@ _data = {
 &"winscreen_flash": SubResource("Animation_krm4r")
 }
 
+[sub_resource type="FontVariation" id="FontVariation_4lam4"]
+base_font = ExtResource("6_krm4r")
+variation_opentype = {
+2003265652: 250
+}
+
 [sub_resource type="LabelSettings" id="LabelSettings_7ka64"]
+font = SubResource("FontVariation_4lam4")
 font_size = 54
 font_color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
 
