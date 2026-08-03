@@ -115,6 +115,10 @@ _data = {
 
 [node name="player" type="CharacterBody2D" unique_id=316219054 groups=["player"]]
 script = ExtResource("1_3vyb7")
+max_speed = 350
+jump_strength = 500
+acceleration = 1000
+friction = 1700
 
 [node name="texture" type="Panel" parent="." unique_id=1191240159]
 offset_left = -32.0
