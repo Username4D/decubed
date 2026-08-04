@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bws6p50rxl8ib"]
+
+[ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="1_ngtly"]
+[ext_resource type="Texture2D" uid="uid://cub8pvg5ekimw" path="res://assets/tiles.svg" id="2_wqvpk"]
+[ext_resource type="Script" uid="uid://dowycgdx7jocd" path="res://scripts/level_menu_button.gd" id="2_wtr5b"]
+[ext_resource type="FontFile" uid="uid://b5vcbblf15tfs" path="res://assets/Raleway-VariableFont_wght.ttf" id="3_wtr5b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ka64"]
+bg_color = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ka64"]
+atlas = ExtResource("2_wqvpk")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="FontVariation" id="FontVariation_ru7vt"]
+base_font = ExtResource("3_wtr5b")
+variation_opentype = {
+2003265652: 250
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ka64"]
+font = SubResource("FontVariation_ru7vt")
+font_size = 36
+
+[node name="level_menu_button" type="Panel" unique_id=1893372858]
+offset_right = 64.0
+offset_bottom = 64.0
+theme = ExtResource("1_ngtly")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ka64")
+script = ExtResource("2_wtr5b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=890616871]
+self_modulate = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+show_behind_parent = true
+position = Vector2(32, 32)
+scale = Vector2(1.2, 1.2)
+texture = SubResource("AtlasTexture_7ka64")
+
+[node name="level_label" type="Label" parent="." unique_id=512979304]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 63.0
+offset_bottom = 60.0
+text = "1"
+label_settings = SubResource("LabelSettings_7ka64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next_button_line" type="Line2D" parent="." unique_id=1083715416]
+show_behind_parent = true
+position = Vector2(32, 32)
+points = PackedVector2Array(0, 0)
+default_color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)

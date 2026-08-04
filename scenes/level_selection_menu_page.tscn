@@ -1,0 +1,131 @@
+[gd_scene format=4 uid="uid://l8wwrgn781a"]
+
+[ext_resource type="Script" uid="uid://dacx63beenmmr" path="res://scripts/level_selection_menu_page.gd" id="1_5whb5"]
+[ext_resource type="Texture2D" uid="uid://cub8pvg5ekimw" path="res://assets/tiles.svg" id="1_52b5d"]
+[ext_resource type="PackedScene" uid="uid://blujvfd5uvcn8" path="res://scenes/wall.tscn" id="2_w4lqw"]
+[ext_resource type="PackedScene" uid="uid://vynfktfqy0kk" path="res://scenes/spike.tscn" id="3_5whb5"]
+[ext_resource type="PackedScene" uid="uid://bws6p50rxl8ib" path="res://scenes/level_menu_button.tscn" id="4_w4lqw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8hq38"]
+texture = ExtResource("1_52b5d")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ava8b"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_8hq38")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hncph"]
+scenes/1/scene = ExtResource("2_w4lqw")
+scenes/2/scene = ExtResource("3_5whb5")
+
+[sub_resource type="TileSet" id="TileSet_5c2n6"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetScenesCollectionSource_hncph")
+
+[node name="level_selection_menu_page" type="Node2D" unique_id=1363451576]
+script = ExtResource("1_5whb5")
+
+[node name="background_tilemap" type="TileMapLayer" parent="." unique_id=2048500819]
+self_modulate = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+position = Vector2(576, 320)
+scale = Vector2(0.9, 0.9)
+tile_map_data = PackedByteArray("AAD3/wQAAAACAAIAAAD4/wQAAAACAAIAAAD5/wQAAAACAAIAAAD6/wQAAAACAAIAAAD7/wQAAAACAAIAAAD8/wQAAAACAAIAAAD9/wQAAAACAAIAAAD+/wQAAAACAAIAAAD//wQAAAACAAIAAAAAAAQAAAACAAIAAAABAAQAAAACAAIAAAACAAQAAAACAAIAAAADAAQAAAACAAIAAAAEAAQAAAACAAIAAAAFAAQAAAACAAIAAAAGAAQAAAACAAIAAAAHAAQAAAACAAIAAAAIAAQAAAACAAIAAAAJAAQAAAACAAIAAAAIAPv/AAACAAIAAAAIAPz/AAACAAIAAAAIAP3/AAACAAIAAAAIAP7/AAACAAIAAAAIAP//AAACAAIAAAAIAAAAAAACAAIAAAAIAAEAAAACAAIAAAAIAAIAAAACAAIAAAAIAAMAAAACAAIAAAAJAPv/AAACAAIAAAAJAPz/AAACAAIAAAAJAP3/AAACAAIAAAAJAP7/AAACAAIAAAAJAP//AAACAAIAAAAJAAAAAAACAAIAAAAJAAEAAAACAAIAAAAJAAIAAAACAAIAAAAJAAMAAAACAAIAAAD3//v/AAACAAIAAAD4//v/AAACAAIAAAD5//v/AAACAAIAAAD6//v/AAACAAIAAAD7//v/AAACAAIAAAD8//v/AAACAAIAAAD9//v/AAACAAIAAAD+//v/AAACAAIAAAD///v/AAACAAIAAAAAAPv/AAACAAIAAAABAPv/AAACAAIAAAACAPv/AAACAAIAAAADAPv/AAACAAIAAAAEAPv/AAACAAIAAAAFAPv/AAACAAIAAAAGAPv/AAACAAIAAAAHAPv/AAACAAIAAAD2//v/AAACAAIAAAD2//z/AAACAAIAAAD2//3/AAACAAIAAAD2//7/AAACAAIAAAD2////AAACAAIAAAD2/wAAAAACAAIAAAD2/wEAAAACAAIAAAD2/wIAAAACAAIAAAD2/wMAAAACAAIAAAD3//z/AAACAAIAAAD3//3/AAACAAIAAAD3//7/AAACAAIAAAD3////AAACAAIAAAD3/wAAAAACAAIAAAD3/wEAAAACAAIAAAD3/wIAAAACAAIAAAD3/wMAAAACAAIAAAD2/wQAAAACAAIAAAD4/wMAAAAAAAIAAAD4/wIAAAAAAAIAAAD5/wMAAAAAAAIAAAD7/wMAAAAAAAIAAAD4//z/AAAAAAIAAAD4//3/AAAAAAIAAAD5//z/AAAAAAIAAAD9//z/AAAAAAIAAAD+//z/AAAAAAIAAAABAPz/AAAAAAIAAAAHAPz/AAAAAAIAAAAGAPz/AAAAAAIAAAAFAPz/AAAAAAIAAAAHAP3/AAAAAAIAAAAHAAEAAAAAAAIAAAAHAAMAAAAAAAIAAAAGAAMAAAAAAAIAAAAFAAMAAAAAAAIAAAABAAMAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_ava8b")
+
+[node name="tilemap" type="TileMapLayer" parent="." unique_id=1460299739]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAQAAAAIAAAAAAAAAAQAAAAMAAAAAAAAAAQAAAAQAAAAAAAAAAQAAAAUAAAAAAAAAAQAAAAYAAAAAAAAAAQAAAAcAAAAAAAAAAQAAAAgAAAAAAAAAAQAAAAkAAAAAAAAAAQABAAkAAAAAAAAAAQACAAkAAAAAAAAAAQADAAkAAAAAAAAAAQAEAAkAAAAAAAAAAQAFAAkAAAAAAAAAAQAGAAkAAAAAAAAAAQAHAAkAAAAAAAAAAQAIAAkAAAAAAAAAAQAJAAkAAAAAAAAAAQAKAAkAAAAAAAAAAQALAAkAAAAAAAAAAQAMAAkAAAAAAAAAAQANAAkAAAAAAAAAAQAOAAkAAAAAAAAAAQAPAAkAAAAAAAAAAQAQAAkAAAAAAAAAAQARAAkAAAAAAAAAAQARAAAAAAAAAAAAAQARAAEAAAAAAAAAAQARAAIAAAAAAAAAAQARAAMAAAAAAAAAAQARAAQAAAAAAAAAAQARAAUAAAAAAAAAAQARAAYAAAAAAAAAAQARAAcAAAAAAAAAAQARAAgAAAAAAAAAAQABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQADAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQAGAAAAAAAAAAAAAQAHAAAAAAAAAAAAAQAIAAAAAAAAAAAAAQAJAAAAAAAAAAAAAQAKAAAAAAAAAAAAAQALAAAAAAAAAAAAAQAPAAAAAAAAAAAAAQAQAAAAAAAAAAAAAQAMAAAAAAAAAAAAAQANAAAAAAAAAAAAAQAOAAAAAAAAAAAAAQAAAAoAAAAAAAAAAQABAAoAAAAAAAAAAQACAAoAAAAAAAAAAQADAAoAAAAAAAAAAQAEAAoAAAAAAAAAAQAFAAoAAAAAAAAAAQAGAAoAAAAAAAAAAQAHAAoAAAAAAAAAAQAIAAoAAAAAAAAAAQAJAAoAAAAAAAAAAQAKAAoAAAAAAAAAAQALAAoAAAAAAAAAAQAMAAoAAAAAAAAAAQANAAoAAAAAAAAAAQAOAAoAAAAAAAAAAQAPAAoAAAAAAAAAAQAQAAoAAAAAAAAAAQARAAoAAAAAAAAAAQABAP//AAAAAAAAAQACAP//AAAAAAAAAQADAP//AAAAAAAAAQAEAP//AAAAAAAAAQAFAP//AAAAAAAAAQAGAP//AAAAAAAAAQAHAP//AAAAAAAAAQAIAP//AAAAAAAAAQAJAP//AAAAAAAAAQAKAP//AAAAAAAAAQALAP//AAAAAAAAAQAMAP//AAAAAAAAAQANAP//AAAAAAAAAQAOAP//AAAAAAAAAQAPAP//AAAAAAAAAQAQAP//AAAAAAAAAQARAP//AAAAAAAAAQAAAP//AAAAAAAAAQA=")
+tile_set = SubResource("TileSet_5c2n6")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=601118728]
+position = Vector2(576, 320)
+
+[node name="level_buttons" type="Node2D" parent="." unique_id=184924756]
+position = Vector2(64, -16)
+
+[node name="1" parent="level_buttons" unique_id=1893372858 instance=ExtResource("4_w4lqw")]
+offset_left = 192.0
+offset_top = 352.0
+offset_right = 256.0
+offset_bottom = 416.0
+next_button_line_position = Vector2(32, 0)
+
+[node name="2" parent="level_buttons" unique_id=739875706 instance=ExtResource("4_w4lqw")]
+offset_left = 288.0
+offset_top = 352.0
+offset_right = 352.0
+offset_bottom = 416.0
+next_button_line_position = Vector2(0, -32)
+
+[node name="3" parent="level_buttons" unique_id=2078958604 instance=ExtResource("4_w4lqw")]
+offset_left = 288.0
+offset_top = 256.0
+offset_right = 352.0
+offset_bottom = 320.0
+next_button_line_position = Vector2(32, 0)
+
+[node name="4" parent="level_buttons" unique_id=1944412484 instance=ExtResource("4_w4lqw")]
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 448.0
+offset_bottom = 320.0
+next_button_line_position = Vector2(32, 0)
+
+[node name="5" parent="level_buttons" unique_id=1769465610 instance=ExtResource("4_w4lqw")]
+offset_left = 480.0
+offset_top = 256.0
+offset_right = 544.0
+offset_bottom = 320.0
+next_button_line_position = Vector2(0, 32)
+
+[node name="6" parent="level_buttons" unique_id=2030147109 instance=ExtResource("4_w4lqw")]
+offset_left = 480.0
+offset_top = 352.0
+offset_right = 544.0
+offset_bottom = 416.0
+next_button_line_position = Vector2(32, 0)
+
+[node name="7" parent="level_buttons" unique_id=200466695 instance=ExtResource("4_w4lqw")]
+offset_left = 576.0
+offset_top = 352.0
+offset_right = 640.0
+offset_bottom = 416.0
+next_button_line_position = Vector2(32, 0)
+
+[node name="8" parent="level_buttons" unique_id=1325532448 instance=ExtResource("4_w4lqw")]
+offset_left = 672.0
+offset_top = 352.0
+offset_right = 736.0
+offset_bottom = 416.0
+next_button_line_position = Vector2(0, -32)
+
+[node name="9" parent="level_buttons" unique_id=968071708 instance=ExtResource("4_w4lqw")]
+offset_left = 672.0
+offset_top = 256.0
+offset_right = 736.0
+offset_bottom = 320.0
+next_button_line_position = Vector2(32, 0)
+
+[node name="10" parent="level_buttons" unique_id=790955213 instance=ExtResource("4_w4lqw")]
+offset_left = 768.0
+offset_top = 256.0
+offset_right = 832.0
+offset_bottom = 320.0

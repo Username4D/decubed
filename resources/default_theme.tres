@@ -1,0 +1,135 @@
+[gd_resource type="Theme" format=3 uid="uid://d1cb6v5m03epb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2ngq"]
+bg_color = Color(1, 1, 1, 0.32156864)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwhd1"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nva1m"]
+bg_color = Color(1, 1, 1, 0.096)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pkyf"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og51b"]
+bg_color = Color(1, 1, 1, 0.19700001)
+
+[sub_resource type="Gradient" id="Gradient_mwhd1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.56078434)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nva1m"]
+gradient = SubResource("Gradient_mwhd1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwk1s"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7mbl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru7vt"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.68235296)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2ngq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ka64"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+bg_color = Color(0, 0, 0, 0.42200002)
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 0.47200003)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdkyu"]
+content_margin_top = 8.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdiyg"]
+content_margin_top = 8.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76tm7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.43137255)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsk3a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.43137255)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 1
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_k2ngq")
+Button/styles/focus = SubResource("StyleBoxFlat_mwhd1")
+Button/styles/hover = SubResource("StyleBoxFlat_nva1m")
+Button/styles/normal = SubResource("StyleBoxFlat_2pkyf")
+Button/styles/pressed = SubResource("StyleBoxFlat_og51b")
+HSlider/icons/grabber = null
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = null
+HSlider/icons/tick = SubResource("GradientTexture1D_nva1m")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_uwk1s")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w7mbl")
+HSlider/styles/slider = SubResource("StyleBoxFlat_ru7vt")
+LineEdit/colors/caret_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_k2ngq")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_7ka64")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_7ka64")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_bdkyu")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_wdiyg")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_wdiyg")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_76tm7")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_bsk3a")
