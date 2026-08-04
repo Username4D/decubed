@@ -15,3 +15,6 @@ func _process(delta: float) -> void:
 
 func _on_player_finished() -> void:
 	$animations.play("winscreen_flash")
+
+func _on_player_death() -> void:
+	$animations.play("death_flash")

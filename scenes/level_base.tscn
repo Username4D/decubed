@@ -108,6 +108,77 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_8n3nq"]
+resource_name = "death_flash"
+length = 1.5999999999999999
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("flash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("flash:color:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16665, 0, 0, 0),
+"times": PackedFloat32Array(0.0001, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("flash:color:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16665, 0, 0, 0),
+"times": PackedFloat32Array(0.0001, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("flash:color:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16665, 0, 0, 0),
+"times": PackedFloat32Array(0.0001, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("flash:color:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.033233333, -0.27034396, 0.005279878, -1.7333333, -0.029091412, 0, 0),
+"times": PackedFloat32Array(0.0001, 1.3666667)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("camera:zoom:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.43333334, -0.14816004, 0.95994246, -0.0333333, -0.0062353015, 0, 0, 1, -0.100000024, -0.02832055, 0.43333334, -0.14816004),
+"times": PackedFloat32Array(0, 1.3666667, 1.5666667)
+}
+
 [sub_resource type="Animation" id="Animation_krm4r"]
 resource_name = "winscreen_flash"
 length = 10.0
@@ -194,6 +265,7 @@ tracks/6/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8n3nq"]
 _data = {
 &"RESET": SubResource("Animation_8rhjg"),
+&"death_flash": SubResource("Animation_8n3nq"),
 &"winscreen_flash": SubResource("Animation_krm4r")
 }
 
@@ -254,5 +326,6 @@ offset_bottom = 768.0
 position = Vector2(576, 320)
 
 [connection signal="body_entered" from="tilemap/spike" to="tilemap/spike" method="_on_body_entered"]
-[connection signal="body_entered" from="tilemap/@Area2D@26403" to="tilemap/@Area2D@26403" method="_on_body_entered"]
+[connection signal="body_entered" from="tilemap/@Area2D@26905" to="tilemap/@Area2D@26905" method="_on_body_entered"]
+[connection signal="death" from="player" to="." method="_on_player_death"]
 [connection signal="finished" from="player" to="." method="_on_player_finished"]

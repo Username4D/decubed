@@ -16,6 +16,7 @@ enum states {ALIVE, FINISHED, DEAD}
 var finish_position = Vector2.ZERO
 signal death
 signal finished
+signal respawn
 
 func _physics_process(delta: float) -> void:
 	if state == states.ALIVE:
@@ -41,11 +42,13 @@ func _physics_process(delta: float) -> void:
 		self.rotation_degrees += delta * finish_speed * 60
 func kill():
 	if state == states.ALIVE:
+		death.emit()
 		state = states.DEAD
 		$animations.play("death")
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(1.4).timeout
 		self.position = spawn_point
-		$animations.play("RESET")
+		respawn.emit()
+		$animations.play_backwards("death")
 		state = states.ALIVE
 
 func finish(finish_object: Node):
