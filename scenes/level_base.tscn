@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://iktdgmf2qqul" path="res://scenes/finish.tscn" id="4_58o6h"]
 [ext_resource type="PackedScene" uid="uid://chbk8rjtc5cca" path="res://scenes/mini_spike.tscn" id="5_2v7b3"]
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="7_8n3nq"]
+[ext_resource type="Shader" uid="uid://ba62kt1lol1tb" path="res://resources/contrast.gdshader" id="8_6k8qy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2v7b3"]
 texture = ExtResource("4_8n3nq")
@@ -299,6 +300,11 @@ _data = {
 &"winscreen_flash": SubResource("Animation_krm4r")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1vn1j"]
+shader = ExtResource("8_6k8qy")
+shader_parameter/alternative_color = Color(1, 0.5176471, 0.7137255, 1)
+shader_parameter/normal_color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+
 [sub_resource type="FontVariation" id="FontVariation_4lam4"]
 base_font = ExtResource("7_8n3nq")
 variation_opentype = {
@@ -346,6 +352,7 @@ libraries/ = SubResource("AnimationLibrary_8n3nq")
 
 [node name="label" type="Label" parent="." unique_id=1536924425]
 visible = false
+material = SubResource("ShaderMaterial_1vn1j")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -369,5 +376,7 @@ offset_bottom = 768.0
 [node name="camera" type="Camera2D" parent="." unique_id=1367078611]
 position = Vector2(576, 320)
 
+[connection signal="body_entered" from="tilemap/spike" to="tilemap/spike" method="_on_body_entered"]
+[connection signal="body_entered" from="tilemap/@Area2D@173496" to="tilemap/@Area2D@173496" method="_on_body_entered"]
 [connection signal="death" from="player" to="." method="_on_player_death"]
 [connection signal="finished" from="player" to="." method="_on_player_finished"]
