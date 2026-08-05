@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://f1uag5cn8vde" path="res://scenes/player.tscn" id="3_8rhjg"]
 [ext_resource type="Texture2D" uid="uid://cub8pvg5ekimw" path="res://assets/tiles.svg" id="4_8n3nq"]
 [ext_resource type="PackedScene" uid="uid://iktdgmf2qqul" path="res://scenes/finish.tscn" id="4_58o6h"]
+[ext_resource type="PackedScene" uid="uid://chbk8rjtc5cca" path="res://scenes/mini_spike.tscn" id="5_2v7b3"]
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="7_8n3nq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2v7b3"]
@@ -38,6 +39,7 @@ sources/0 = SubResource("TileSetAtlasSource_2v7b3")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_krm4r"]
 scenes/1/scene = ExtResource("1_bkdr1")
 scenes/2/scene = ExtResource("2_58o6h")
+scenes/3/scene = ExtResource("5_2v7b3")
 
 [sub_resource type="TileSet" id="TileSet_7ka64"]
 tile_size = Vector2i(64, 64)
@@ -325,7 +327,7 @@ tile_set = SubResource("TileSet_7ka64")
 [node name="foreground_tilemap" type="TileMapLayer" parent="." unique_id=684972773]
 self_modulate = Color(0.0749534, 0.00027683604, 0.104755946, 1)
 position = Vector2(576, 320)
-scale = Vector2(1.266, 1.266)
+scale = Vector2(1.29, 1.29)
 tile_map_data = PackedByteArray("AAD4/wQAAAAAAAIAAAD4//v/AAAAAAIAAAAAAPv/AAAAAAIAAAAHAPv/AAAAAAIAAAAHAAQAAAAAAAIAAAAGAAQAAAAAAAIAAAD4//z/AAAAAAIAAAD4//3/AAAAAAIAAAD4/wMAAAAAAAIAAAD4/wIAAAAAAAIAAAD8//v/AAAAAAIAAAD9//v/AAAAAAIAAAD+//v/AAAAAAIAAAD6//v/AAAAAAIAAAAFAPv/AAAAAAIAAAAGAPv/AAAAAAIAAAAHAAMAAAAAAAIAAAAHAAIAAAAAAAIAAAAHAAEAAAAAAAIAAAD5/wQAAAAAAAIAAAD6/wQAAAAAAAIAAAD+/wQAAAAAAAIAAAD//wQAAAAAAAIAAAAAAAQAAAAAAAIAAAABAAQAAAAAAAIAAAD3//v/AAAAAAIAAAD3//z/AAAAAAIAAAD3//3/AAAAAAIAAAD3//7/AAAAAAIAAAD3////AAAAAAIAAAD3/wEAAAAAAAIAAAD3/wIAAAAAAAIAAAD3/wMAAAAAAAIAAAD3/wQAAAAAAAIAAAAIAP//AAAAAAIAAAAIAAAAAAAAAAIAAAAIAAEAAAAAAAIAAAAIAAIAAAAAAAIAAAAIAAMAAAAAAAIAAAAIAAQAAAAAAAIAAAAIAPv/AAAAAAIAAAAIAPz/AAAAAAIAAAA=")
 tile_set = SubResource("TileSet_krm4r")
 
@@ -367,7 +369,5 @@ offset_bottom = 768.0
 [node name="camera" type="Camera2D" parent="." unique_id=1367078611]
 position = Vector2(576, 320)
 
-[connection signal="body_entered" from="tilemap/spike" to="tilemap/spike" method="_on_body_entered"]
-[connection signal="body_entered" from="tilemap/@Area2D@31442" to="tilemap/@Area2D@31442" method="_on_body_entered"]
 [connection signal="death" from="player" to="." method="_on_player_death"]
 [connection signal="finished" from="player" to="." method="_on_player_finished"]

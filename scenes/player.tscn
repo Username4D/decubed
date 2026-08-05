@@ -10,7 +10,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ka64"]
-size = Vector2(64, 64)
+size = Vector2(63.5, 63.5)
 
 [sub_resource type="Animation" id="Animation_3vyb7"]
 length = 0.001
@@ -114,9 +114,10 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D" unique_id=316219054 groups=["player"]]
+safe_margin = 0.001
 script = ExtResource("1_3vyb7")
 max_speed = 350
-jump_strength = 500
+jump_strength = 530
 acceleration = 1000
 friction = 1700
 
