@@ -17,4 +17,4 @@ tile_map_data = PackedByteArray("AAD4/wQAAAAAAAEAAFD4//v/AAAAAAEAADAAAPv/AAAAAAE
 position = Vector2(992, 480)
 
 [connection signal="body_entered" from="tilemap/spike" to="tilemap/spike" method="_on_body_entered"]
-[connection signal="body_entered" from="tilemap/@Area2D@24430" to="tilemap/@Area2D@24430" method="_on_body_entered"]
+[connection signal="body_entered" from="tilemap/@Area2D@44142" to="tilemap/@Area2D@44142" method="_on_body_entered"]

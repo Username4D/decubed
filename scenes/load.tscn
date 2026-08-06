@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://5i8mi5c6xt6d"]
+
+[ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="1_2qpnl"]
+[ext_resource type="Script" uid="uid://xncj2xqvxsyf" path="res://scripts/load.gd" id="1_wmr0k"]
+
+[sub_resource type="FontVariation" id="FontVariation_ru7vt"]
+base_font = ExtResource("1_2qpnl")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ka64"]
+font = SubResource("FontVariation_ru7vt")
+font_size = 78
+
+[sub_resource type="LabelSettings" id="LabelSettings_wmr0k"]
+font = SubResource("FontVariation_ru7vt")
+
+[node name="load" type="ColorRect" unique_id=1634270527]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_wmr0k")
+
+[node name="loading_label" type="Label" parent="." unique_id=2138497994]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 640.0
+text = "Loading..."
+label_settings = SubResource("LabelSettings_7ka64")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="epilepsy_warning" type="Label" parent="." unique_id=1009749718]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 1152.0
+offset_bottom = 640.0
+text = "Epilepsy warning"
+label_settings = SubResource("LabelSettings_wmr0k")
+horizontal_alignment = 1
+vertical_alignment = 1

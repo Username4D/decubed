@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bo571aglf8wjl"]
+
+[ext_resource type="Script" uid="uid://cm1v4stg0w214" path="res://scripts/viewport.gd" id="1_mjkpp"]
+[ext_resource type="Shader" uid="uid://ctp6piwxetti4" path="res://resources/transition.gdshader" id="2_rhx5r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ru7vt"]
+shader = ExtResource("2_rhx5r")
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 32.0
+
+[sub_resource type="Animation" id="Animation_0wal2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition_rect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6b3n7"]
+resource_name = "transition"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("transition_rect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqlqe"]
+_data = {
+&"RESET": SubResource("Animation_0wal2"),
+&"transition": SubResource("Animation_6b3n7")
+}
+
+[node name="viewport" type="Node2D" unique_id=42271888]
+script = ExtResource("1_mjkpp")
+
+[node name="transition_layer" type="CanvasLayer" parent="." unique_id=3865024]
+
+[node name="transition_rect" type="ColorRect" parent="transition_layer" unique_id=1569467154]
+visible = false
+material = SubResource("ShaderMaterial_ru7vt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="animation_player" type="AnimationPlayer" parent="transition_layer" unique_id=657547386]
+libraries/ = SubResource("AnimationLibrary_cqlqe")
+
+[node name="content" type="Node2D" parent="." unique_id=905764950]
