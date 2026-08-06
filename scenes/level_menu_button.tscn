@@ -11,6 +11,7 @@ bg_color = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ka64"]
 atlas = ExtResource("2_wqvpk")
 region = Rect2(0, 64, 64, 64)
+filter_clip = true
 
 [sub_resource type="FontVariation" id="FontVariation_ru7vt"]
 base_font = ExtResource("4_wqvpk")

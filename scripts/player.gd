@@ -23,6 +23,8 @@ func _physics_process(delta: float) -> void:
 		var direction = Input.get_axis("ui_left", "ui_right")
 		if direction == 0:
 			speed = move_toward(speed, 0, delta * friction)
+		elif speed == 0:
+			speed = move_toward(speed, direction * max_speed, delta * acceleration)
 		elif direction / abs(direction) != speed / abs(speed):
 			speed = move_toward(speed, direction * max_speed, delta * friction)
 		else:

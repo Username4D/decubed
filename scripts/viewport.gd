@@ -3,6 +3,7 @@ extends Node2D
 
 signal transition_midpoint
 signal transition_continue
+signal transition_finished
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,6 @@ func show_transition():
 	await $transition_layer/animation_player.animation_finished
 	transition_midpoint.emit()
 	await transition_continue
-	await get_tree().create_timer(0.4).timeout
 	$transition_layer/transition_rect.rotation = PI
 	$transition_layer/animation_player.play_backwards("transition")
 	await $transition_layer/animation_player.animation_finished
