@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$label.position.y = sin(label_position_y) * 16
+	$label.position.y = sin(label_position_y) * 8
 	label_position_y += delta * 2
 	$camera.zoom.y = $camera.zoom.x
 
@@ -18,3 +18,22 @@ func _on_player_finished() -> void:
 
 func _on_player_death() -> void:
 	$animations.play("death_flash")
+
+
+func _on_menu_button_pressed() -> void:
+	View.show_transition()
+	await View.transition_midpoint
+	await get_tree().process_frame
+	View.change_scene_to_file("res://scenes/level_selection_menu_page.tscn", true, true)
+
+
+
+
+func _on_next_button_pressed() -> void:
+	if ResourceLoader.exists("res://scenes/levels/%d.tscn" % (int(self.name) + 1)):
+		View.show_transition()
+		await View.transition_midpoint
+		await get_tree().process_frame
+		View.change_scene_to_file("res://scenes/levels/%d.tscn" % (int(self.name) + 1), true, true)
+	else:
+		push_error("level not found")
