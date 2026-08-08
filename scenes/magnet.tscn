@@ -18,6 +18,7 @@ gravity_space_override = 1
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
+gravity = 1200.0
 script = ExtResource("1_oylys")
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=791819915]

@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	$particles.self_modulate.a = move_toward($particles.self_modulate.a, 1 if Input.is_action_pressed("ui_up") and is_touching_player else 0, delta)
-	
+	self.gravity = 0 if !(Input.is_action_pressed("ui_up") and is_touching_player) else 1200
 
 
 func _on_body_entered(body: Node2D) -> void:
