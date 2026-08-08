@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c8axmd4gjsroo"]
+
+[ext_resource type="Script" uid="uid://b5cmcubrm5d07" path="res://scripts/magnet.gd" id="1_oylys"]
+[ext_resource type="Texture2D" uid="uid://soywq6es5st6" path="res://assets/dashed_texture.png" id="1_yp8jf"]
+[ext_resource type="Texture2D" uid="uid://cwj52tuvww00o" path="res://assets/particle.png" id="3_daydw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ka64"]
+radius = 257.99225
+
+[sub_resource type="SphereMesh" id="SphereMesh_7ka64"]
+
+[sub_resource type="Gradient" id="Gradient_7ka64"]
+offsets = PackedFloat32Array(0, 0.0974359, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.6875, 1, 1, 1, 0)
+
+[node name="magnet" type="Area2D" unique_id=177910537]
+gravity_space_override = 1
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+script = ExtResource("1_oylys")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=791819915]
+shape = SubResource("CircleShape2D_7ka64")
+
+[node name="texture" type="MeshInstance2D" parent="." unique_id=2033626793]
+self_modulate = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+position = Vector2(1.9073486e-06, 5.722046e-06)
+scale = Vector2(32, 32)
+mesh = SubResource("SphereMesh_7ka64")
+
+[node name="line" type="Line2D" parent="." unique_id=1549115559]
+texture_filter = 1
+texture_repeat = 2
+closed = true
+width = 5.75
+default_color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+texture = ExtResource("1_yp8jf")
+texture_mode = 1
+sharp_limit = 0.0
+
+[node name="particles" type="CPUParticles2D" parent="." unique_id=578448025]
+self_modulate = Color(0.14901961, 0, 0.16470589, 0)
+scale = Vector2(2, 2)
+amount = 32
+texture = ExtResource("3_daydw")
+lifetime = 2.0
+preprocess = 4.0
+emission_shape = 6
+emission_ring_inner_radius = 124.0
+emission_ring_radius = 124.0
+particle_flag_align_y = true
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+radial_accel_min = -128.0
+radial_accel_max = -128.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_7ka64")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

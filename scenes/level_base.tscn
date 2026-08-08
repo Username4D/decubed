@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cub8pvg5ekimw" path="res://assets/tiles.svg" id="4_8n3nq"]
 [ext_resource type="PackedScene" uid="uid://iktdgmf2qqul" path="res://scenes/finish.tscn" id="4_58o6h"]
 [ext_resource type="PackedScene" uid="uid://chbk8rjtc5cca" path="res://scenes/mini_spike.tscn" id="5_2v7b3"]
+[ext_resource type="PackedScene" uid="uid://c8axmd4gjsroo" path="res://scenes/magnet.tscn" id="6_rth7s"]
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="7_8n3nq"]
 [ext_resource type="Shader" uid="uid://ba62kt1lol1tb" path="res://resources/contrast.gdshader" id="8_6k8qy"]
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="10_vm68j"]
@@ -44,6 +45,7 @@ sources/0 = SubResource("TileSetAtlasSource_2v7b3")
 scenes/1/scene = ExtResource("1_bkdr1")
 scenes/2/scene = ExtResource("2_58o6h")
 scenes/3/scene = ExtResource("5_2v7b3")
+scenes/4/scene = ExtResource("6_rth7s")
 
 [sub_resource type="TileSet" id="TileSet_7ka64"]
 tile_size = Vector2i(64, 64)
@@ -548,8 +550,6 @@ offset_bottom = 63.999996
 theme = ExtResource("10_vm68j")
 theme_type_variation = &"ButtonHighContrast"
 
-[connection signal="body_entered" from="tilemap/spike" to="tilemap/spike" method="_on_body_entered"]
-[connection signal="body_entered" from="tilemap/@Area2D@63245" to="tilemap/@Area2D@63245" method="_on_body_entered"]
 [connection signal="death" from="player" to="." method="_on_player_death"]
 [connection signal="finished" from="player" to="." method="_on_player_finished"]
 [connection signal="pressed" from="end_screen/menu_texture/menu_button" to="." method="_on_menu_button_pressed"]
