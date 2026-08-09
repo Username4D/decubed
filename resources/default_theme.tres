@@ -15,6 +15,21 @@ bg_color = Color(1, 1, 1, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og51b"]
 bg_color = Color(1, 1, 1, 0.19700001)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ka64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4duf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w72j2"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rivam"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ru7vt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru7vt"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2ngq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rth7s"]
@@ -56,7 +71,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru7vt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk425"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -125,6 +140,13 @@ Button/styles/focus = SubResource("StyleBoxFlat_mwhd1")
 Button/styles/hover = SubResource("StyleBoxFlat_nva1m")
 Button/styles/normal = SubResource("StyleBoxFlat_2pkyf")
 Button/styles/pressed = SubResource("StyleBoxFlat_og51b")
+ButtonFullWhite/base_type = &"Button"
+ButtonFullWhite/styles/disabled = SubResource("StyleBoxEmpty_7ka64")
+ButtonFullWhite/styles/focus = SubResource("StyleBoxEmpty_x4duf")
+ButtonFullWhite/styles/hover = SubResource("StyleBoxFlat_w72j2")
+ButtonFullWhite/styles/hover_pressed = SubResource("StyleBoxFlat_rivam")
+ButtonFullWhite/styles/normal = SubResource("StyleBoxEmpty_ru7vt")
+ButtonFullWhite/styles/pressed = SubResource("StyleBoxFlat_ru7vt")
 ButtonHighContrast/base_type = &"Button"
 ButtonHighContrast/styles/hover = SubResource("StyleBoxEmpty_k2ngq")
 ButtonHighContrast/styles/hover_pressed = SubResource("StyleBoxFlat_rth7s")
@@ -136,7 +158,7 @@ HSlider/icons/grabber_highlight = null
 HSlider/icons/tick = SubResource("GradientTexture1D_nva1m")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_uwk1s")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w7mbl")
-HSlider/styles/slider = SubResource("StyleBoxFlat_ru7vt")
+HSlider/styles/slider = SubResource("StyleBoxFlat_kk425")
 LineEdit/colors/caret_color = Color(1, 1, 1, 1)
 LineEdit/colors/clear_button_color = Color(1, 1, 1, 1)
 LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)

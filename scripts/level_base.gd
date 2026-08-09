@@ -24,7 +24,7 @@ func _on_menu_button_pressed() -> void:
 	View.show_transition()
 	await View.transition_midpoint
 	await get_tree().process_frame
-	View.change_scene_to_file("res://scenes/level_selection_menu_page.tscn", true, true)
+	View.change_scene_to_file("res://scenes/level_menu_pages_host.tscn", true, true)
 
 
 
