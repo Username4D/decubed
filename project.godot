@@ -46,3 +46,22 @@ player=""
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(1, 0.5193447, 0.7131392, 1)
+
+[shader_globals]
+
+color_light={
+"type": "color",
+"value": Color(1, 0.5176471, 0.7137255, 1)
+}
+color_normal={
+"type": "color",
+"value": Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+}
+color_dark={
+"type": "color",
+"value": Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+}
+color_very_dark={
+"type": "color",
+"value": Color(0.0749534, 0.00027683604, 0.104755946, 1)
+}
