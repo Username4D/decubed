@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cwj52tuvww00o" path="res://assets/particle.png" id="1_5nbog"]
 [ext_resource type="Script" uid="uid://ca6qocbgi8adr" path="res://scripts/finish.gd" id="1_07gpw"]
+[ext_resource type="Material" uid="uid://cyxw5n3k76owe" path="res://resources/color_palette.tres" id="2_2pftv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ka64"]
 radius = 32.0
@@ -22,7 +23,8 @@ visible = false
 shape = SubResource("CircleShape2D_7ka64")
 
 [node name="particles" type="CPUParticles2D" parent="." unique_id=386023019]
-self_modulate = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+material = ExtResource("2_2pftv")
+instance_shader_parameters/color = 2
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_5nbog")
 lifetime = 1.4

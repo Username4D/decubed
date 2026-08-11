@@ -33,12 +33,12 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2ngq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rth7s"]
-bg_color = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8t3pq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rdwc"]
-bg_color = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Gradient" id="Gradient_mwhd1"]
 offsets = PackedFloat32Array(0)

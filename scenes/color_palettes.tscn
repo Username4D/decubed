@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://u8a2ufdjts2o"]
+
+[ext_resource type="Script" uid="uid://olbxjgttp6mh" path="res://scripts/color_palettes.gd" id="1_xvqwy"]
+[ext_resource type="Script" uid="uid://d27g5e872rgxs" path="res://scripts/color_palette_class.gd" id="2_4deda"]
+
+[sub_resource type="Resource" id="Resource_xvqwy"]
+script = ExtResource("2_4deda")
+light = Color(1, 0.5176471, 0.7137255, 1)
+normal = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+dark = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+very_dark = Color(0.0749534, 0.00027683604, 0.104755946, 1)
+metadata/_custom_type_script = "uid://d27g5e872rgxs"
+
+[sub_resource type="Resource" id="Resource_cm4am"]
+script = ExtResource("2_4deda")
+light = Color(0.58010083, 0.88206166, 0.8739097, 1)
+normal = Color(0.20087439, 0.585972, 0.7002711, 1)
+dark = Color(2.6471912e-07, 0.14813063, 0.21484965, 1)
+very_dark = Color(0, 0.03185494, 0.06985903, 1)
+metadata/_custom_type_script = "uid://d27g5e872rgxs"
+
+[node name="color_palettes" type="Node" unique_id=1911414610]
+script = ExtResource("1_xvqwy")
+palettes = Array[Resource]([SubResource("Resource_xvqwy"), SubResource("Resource_cm4am")])

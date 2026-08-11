@@ -1,11 +1,15 @@
 extends Node2D
 
+@export var palette_index: int = 0
+
 var label_position_y = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$player.spawn_point = $spawn_point.position
-
-
+	await ColorPalettes.load_palette(palette_index)
+	$background.visible = true
+	$background_tilemap.self_modulate = ColorPalettes.palettes[palette_index].normal
+	$foreground_tilemap.self_modulate = ColorPalettes.palettes[palette_index].very_dark
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$label.position.y = sin(label_position_y) * 8

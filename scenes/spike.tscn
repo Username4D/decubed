@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://vynfktfqy0kk"]
 
+[ext_resource type="Material" uid="uid://cyxw5n3k76owe" path="res://resources/color_palette.tres" id="1_7a7y0"]
 [ext_resource type="Script" uid="uid://c42u83ud05tal" path="res://scripts/spike.gd" id="1_ljd5v"]
 
 [node name="spike" type="Area2D" unique_id=521260032]
@@ -11,6 +12,8 @@ scale = Vector2(0.705, 0.705)
 polygon = PackedVector2Array(24, 32, -24, 32, 0, -16)
 
 [node name="texture" type="Polygon2D" parent="." unique_id=1323001248]
+material = ExtResource("1_7a7y0")
+instance_shader_parameters/color = 2
 color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
 polygon = PackedVector2Array(0, -16, 24, 32, -24, 32)
 

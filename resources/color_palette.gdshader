@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform int color : hint_enum("light", "normal", "dark", "very dark") = 0;
+instance uniform int color : hint_enum("light", "normal", "dark", "very dark");
 global uniform vec4 color_light;
 global uniform vec4 color_normal;
 global uniform vec4 color_dark;
