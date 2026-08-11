@@ -5,6 +5,7 @@ extends Node2D
 var label_position_y = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$end_screen.visible = false
 	$player.spawn_point = $spawn_point.position
 	await ColorPalettes.load_palette(palette_index)
 	$background.visible = true
