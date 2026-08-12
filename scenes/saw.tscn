@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ckcuolcsii1at"]
+
+[ext_resource type="Script" uid="uid://c20r7c2762eqh" path="res://scripts/saw.gd" id="1_kprxg"]
+[ext_resource type="Material" uid="uid://cyxw5n3k76owe" path="res://resources/color_palette.tres" id="2_161w5"]
+[ext_resource type="Texture2D" uid="uid://bhsavhwkqbcmv" path="res://assets/saw.svg" id="2_846d5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ka64"]
+radius = 32.0
+
+[node name="saw" type="Area2D" unique_id=1733807822]
+script = ExtResource("1_kprxg")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1890113917]
+shape = SubResource("CircleShape2D_7ka64")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=428021910]
+material = ExtResource("2_161w5")
+instance_shader_parameters/color = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_846d5")
+flip_h = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
