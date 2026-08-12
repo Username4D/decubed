@@ -9,6 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	%left_button_texture.self_modulate = %left_button_texture.self_modulate.lerp(ColorPalettes.palettes[$menu_pages.get_child(current_screen).palette_index].normal, delta * 2)
+	%right_button_texture.self_modulate = %right_button_texture.self_modulate.lerp(ColorPalettes.palettes[$menu_pages.get_child(current_screen).palette_index].normal, delta * 2)
 	%left_button_texture.visible = current_screen > 0
 	%right_button_texture.visible = current_screen != $menu_pages.get_child_count() - 1
 

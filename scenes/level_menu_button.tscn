@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="4_wqvpk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ka64"]
-bg_color = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ka64"]
 atlas = ExtResource("2_wqvpk")

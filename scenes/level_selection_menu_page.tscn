@@ -38,6 +38,13 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 640.0
 script = ExtResource("1_5whb5")
+palette_index = 1
+
+[node name="background" type="ColorRect" parent="." unique_id=871465337]
+layout_mode = 0
+offset_top = -64.0
+offset_right = 1152.0
+offset_bottom = 704.0
 
 [node name="background_tilemap" type="TileMapLayer" parent="." unique_id=2048500819]
 self_modulate = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
@@ -47,7 +54,6 @@ tile_map_data = PackedByteArray("AAD3/wQAAAACAAIAAAD4/wQAAAACAAIAAAD5/wQAAAACAAI
 tile_set = SubResource("TileSet_ava8b")
 
 [node name="wall" type="Polygon2D" parent="." unique_id=268147594]
-color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
 polygon = PackedVector2Array(0, -64, 0, 704, 1152, 704, 1152, -64, 512, -64, 512, 32, 512, 64, 1088, 64, 1088, 576, 64, 576, 64, 64, 608, 64, 608, -64)
 
 [node name="level_buttons" type="Node2D" parent="." unique_id=184924756]
