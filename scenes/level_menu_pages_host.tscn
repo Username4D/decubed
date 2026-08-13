@@ -21,6 +21,11 @@ palette_index = 0
 layout_mode = 2
 offset = 10
 
+[node name="chapter_3" parent="menu_pages" unique_id=1315515326 instance=ExtResource("1_s0o1t")]
+layout_mode = 2
+offset = 20
+palette_index = 2
+
 [node name="camera" type="Camera2D" parent="." unique_id=690029274]
 top_level = true
 position = Vector2(576, 320)

@@ -11,6 +11,7 @@ radius = 32.0
 script = ExtResource("1_kprxg")
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1890113917]
+scale = Vector2(0.9, 0.9)
 shape = SubResource("CircleShape2D_7ka64")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=428021910]

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c8axmd4gjsroo" path="res://scenes/magnet.tscn" id="6_rth7s"]
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="7_8n3nq"]
 [ext_resource type="Shader" uid="uid://ba62kt1lol1tb" path="res://resources/contrast.gdshader" id="8_6k8qy"]
+[ext_resource type="PackedScene" uid="uid://ckcuolcsii1at" path="res://scenes/saw.tscn" id="8_8t3pq"]
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="10_vm68j"]
 [ext_resource type="Texture2D" uid="uid://bx68yvr8lt27v" path="res://assets/list.svg" id="11_rth7s"]
 [ext_resource type="Texture2D" uid="uid://dcw31nj5gq5ww" path="res://assets/arrow-back-simple.svg" id="12_ngfo8"]
@@ -47,6 +48,7 @@ scenes/1/scene = ExtResource("1_bkdr1")
 scenes/2/scene = ExtResource("2_58o6h")
 scenes/3/scene = ExtResource("5_2v7b3")
 scenes/4/scene = ExtResource("6_rth7s")
+scenes/5/scene = ExtResource("8_8t3pq")
 
 [sub_resource type="TileSet" id="TileSet_7ka64"]
 tile_size = Vector2i(64, 64)
@@ -549,6 +551,8 @@ texture = ExtResource("11_rth7s")
 expand_mode = 3
 
 [node name="menu_button" type="Button" parent="end_screen/menu_texture" unique_id=741319112]
+material = ExtResource("2_ngfo8")
+instance_shader_parameters/color = 1
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0

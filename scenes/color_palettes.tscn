@@ -19,6 +19,14 @@ dark = Color(2.6471912e-07, 0.14813063, 0.21484965, 1)
 very_dark = Color(0, 0.03185494, 0.06985903, 1)
 metadata/_custom_type_script = "uid://d27g5e872rgxs"
 
+[sub_resource type="Resource" id="Resource_846d5"]
+script = ExtResource("2_4deda")
+light = Color(0.63, 0.7163334, 1, 1)
+normal = Color(0.3270704, 0.30163193, 0.7966849, 1)
+dark = Color(0.09579163, 0.028499994, 0.19, 1)
+very_dark = Color(0.045, 0, 0.09, 1)
+metadata/_custom_type_script = "uid://d27g5e872rgxs"
+
 [node name="color_palettes" type="Node" unique_id=1911414610]
 script = ExtResource("1_xvqwy")
-palettes = Array[Resource]([SubResource("Resource_xvqwy"), SubResource("Resource_cm4am")])
+palettes = Array[Resource]([SubResource("Resource_xvqwy"), SubResource("Resource_cm4am"), SubResource("Resource_846d5")])

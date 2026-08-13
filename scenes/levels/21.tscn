@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cryk81802fj1t"]
+
+[ext_resource type="PackedScene" uid="uid://cgu1ghrlxutxh" path="res://scenes/level_base.tscn" id="1_h2wta"]
+[ext_resource type="PackedScene" uid="uid://cvjv6qcxojmtm" path="res://scenes/saw_line.tscn" id="2_6cnwg"]
+
+[node name="21" unique_id=1335110679 instance=ExtResource("1_h2wta")]
+palette_index = 2
+
+[node name="saw_line" parent="tilemap" parent_id_path=PackedInt32Array(80232246) index="0" unique_id=223753783 instance=ExtResource("2_6cnwg")]
+points = PackedVector2Array(288, 544, 800, 544)
