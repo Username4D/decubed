@@ -9,3 +9,7 @@ tile_map_data = PackedByteArray(0, 0, 8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 2, 0, 9, 0, 
 
 [node name="finish" parent="." index="7" unique_id=87900557]
 position = Vector2(928, 544)
+
+[connection signal="body_entered" from="tilemap/spike" to="tilemap/spike" method="_on_body_entered"]
+[connection signal="body_entered" from="tilemap/@Area2D@27642" to="tilemap/@Area2D@27642" method="_on_body_entered"]
+[connection signal="body_entered" from="tilemap/@Area2D@27643" to="tilemap/@Area2D@27643" method="_on_body_entered"]
