@@ -44,6 +44,8 @@ func _physics_process(delta: float) -> void:
 		self.rotation_degrees += delta * finish_speed * 60
 func kill():
 	if state == states.ALIVE:
+		speed = 0
+		velocity = Vector2.ZERO
 		death.emit()
 		state = states.DEAD
 		$animations.play("death")
@@ -54,7 +56,8 @@ func kill():
 		state = states.ALIVE
 
 func finish(finish_object: Node):
-	finished.emit()
-	finish_position = finish_object.position
-	state = states.FINISHED
-	speed = 0
+	if state == states.ALIVE:
+		finished.emit()
+		finish_position = finish_object.position
+		state = states.FINISHED
+		speed = 0
