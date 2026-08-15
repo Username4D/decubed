@@ -2,9 +2,13 @@ extends Node2D
 
 @export var palette_index: int = 0
 
+var checkers_allow_finish = true
 var label_position_y = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for i in $checkers.get_children():
+		i.update.connect(refresh_checkers_status)
+	refresh_checkers_status()
 	$end_screen.visible = false
 	$player.spawn_point = $spawn_point.position
 	await ColorPalettes.load_palette(palette_index)
@@ -16,6 +20,7 @@ func _process(delta: float) -> void:
 	$label.position.y = sin(label_position_y) * 8
 	label_position_y += delta * 2
 	$camera.zoom.y = $camera.zoom.x
+	$finish.modulate.a = move_toward($finish.modulate.a, 1 if checkers_allow_finish else 0, delta * 3)
 
 
 func _on_player_finished() -> void:
@@ -32,8 +37,11 @@ func _on_menu_button_pressed() -> void:
 	View.change_scene_to_file("res://scenes/level_menu_pages_host.tscn", true, true)
 
 
-
-
+func refresh_checkers_status():
+	var allow = true
+	for i in $checkers.get_children():
+		if !i.activated: allow = false
+	checkers_allow_finish = allow
 func _on_next_button_pressed() -> void:
 	if ResourceLoader.exists("res://scenes/levels/%d.tscn" % (int(self.name) + 1)):
 		View.show_transition()

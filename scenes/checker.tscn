@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://jo1otteybhnc"]
+
+[ext_resource type="Script" uid="uid://b0qlqvtpepb03" path="res://scripts/checker.gd" id="1_42jso"]
+[ext_resource type="Texture2D" uid="uid://cwj52tuvww00o" path="res://assets/particle.png" id="1_ix7xs"]
+
+[node name="checker" type="Area2D" unique_id=357536984]
+script = ExtResource("1_42jso")
+
+[node name="texture_outer" type="Sprite2D" parent="." unique_id=1038875743]
+texture = ExtResource("1_ix7xs")
+
+[node name="texture_inner" type="Polygon2D" parent="." unique_id=650168940]
+unique_name_in_owner = true
+scale = Vector2(0.25, 0.25)
+polygon = PackedVector2Array(0, -32, 32, 0, 0, 32, -32, 0)
+
+[node name="hitbox" type="CollisionPolygon2D" parent="." unique_id=1538661416]
+polygon = PackedVector2Array(-32, 0, 0, 32, 32, 0, 0, -32)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
