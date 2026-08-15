@@ -11,6 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	%left_button_texture.self_modulate = %left_button_texture.self_modulate.lerp(ColorPalettes.palettes[$menu_pages.get_child(current_screen).palette_index].normal, delta * 2)
 	%right_button_texture.self_modulate = %right_button_texture.self_modulate.lerp(ColorPalettes.palettes[$menu_pages.get_child(current_screen).palette_index].normal, delta * 2)
+	%exit_button_texture.self_modulate = %exit_button_texture.self_modulate.lerp(ColorPalettes.palettes[$menu_pages.get_child(current_screen).palette_index].normal, delta * 2)
 	%left_button_texture.visible = current_screen > 0
 	%right_button_texture.visible = current_screen != $menu_pages.get_child_count() - 1
 
@@ -22,3 +23,10 @@ func _on_left_button_pressed() -> void:
 func _on_right_button_pressed() -> void:
 	current_screen += 1
 	$camera.position =Vector2(1152 * current_screen + 576, $camera.position.y)
+
+
+func _on_exit_button_pressed() -> void:
+	View.show_transition()
+	await View.transition_midpoint
+	await get_tree().process_frame
+	View.change_scene_to_file("res://scenes/main_menu.tscn", true, true)

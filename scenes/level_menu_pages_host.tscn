@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://l8wwrgn781a" path="res://scenes/level_selection_menu_page.tscn" id="1_s0o1t"]
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="2_5mjou"]
 [ext_resource type="Texture2D" uid="uid://dcw31nj5gq5ww" path="res://assets/arrow-back-simple.svg" id="3_apc0m"]
+[ext_resource type="Texture2D" uid="uid://bn7cqeweeffyw" path="res://assets/first-page.svg" id="5_apc0m"]
 
 [node name="level_menu_pages_host" type="Node2D" unique_id=1391140696]
 script = ExtResource("1_5mjou")
@@ -32,15 +33,13 @@ position = Vector2(576, 320)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 
-[node name="ui_layer" type="Control" parent="camera" unique_id=644303982]
+[node name="layer" type="CanvasLayer" parent="camera" unique_id=1297531836]
+
+[node name="ui_layer" type="Control" parent="camera/layer" unique_id=644303982]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -576.0
-offset_top = -320.0
-offset_right = -576.0
-offset_bottom = -320.0
 
-[node name="left_button_texture" type="TextureRect" parent="camera/ui_layer" unique_id=376339515]
+[node name="left_button_texture" type="TextureRect" parent="camera/layer/ui_layer" unique_id=376339515]
 unique_name_in_owner = true
 visible = false
 self_modulate = Color(1, 0.5176471, 0.7137255, 1)
@@ -55,7 +54,7 @@ theme = ExtResource("2_5mjou")
 texture = ExtResource("3_apc0m")
 expand_mode = 3
 
-[node name="left_button" type="Button" parent="camera/ui_layer/left_button_texture" unique_id=1479487333]
+[node name="left_button" type="Button" parent="camera/layer/ui_layer/left_button_texture" unique_id=1479487333]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -66,7 +65,30 @@ grow_vertical = 2
 theme = ExtResource("2_5mjou")
 theme_type_variation = &"ButtonFullWhite"
 
-[node name="right_button_texture" type="TextureRect" parent="camera/ui_layer" unique_id=1097993252]
+[node name="exit_button_texture" type="TextureRect" parent="camera/layer/ui_layer" unique_id=1281123644]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.5176471, 0.7137255, 1)
+clip_children = 2
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("2_5mjou")
+texture = ExtResource("5_apc0m")
+expand_mode = 3
+
+[node name="exit_button" type="Button" parent="camera/layer/ui_layer/exit_button_texture" unique_id=695692037]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5mjou")
+theme_type_variation = &"ButtonFullWhite"
+
+[node name="right_button_texture" type="TextureRect" parent="camera/layer/ui_layer" unique_id=1097993252]
 unique_name_in_owner = true
 self_modulate = Color(1, 0.5176471, 0.7137255, 1)
 clip_children = 2
@@ -82,7 +104,7 @@ theme = ExtResource("2_5mjou")
 texture = ExtResource("3_apc0m")
 expand_mode = 3
 
-[node name="right_button" type="Button" parent="camera/ui_layer/right_button_texture" unique_id=656963195]
+[node name="right_button" type="Button" parent="camera/layer/ui_layer/right_button_texture" unique_id=656963195]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -93,5 +115,6 @@ grow_vertical = 2
 theme = ExtResource("2_5mjou")
 theme_type_variation = &"ButtonFullWhite"
 
-[connection signal="pressed" from="camera/ui_layer/left_button_texture/left_button" to="." method="_on_left_button_pressed"]
-[connection signal="pressed" from="camera/ui_layer/right_button_texture/right_button" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="camera/layer/ui_layer/left_button_texture/left_button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="camera/layer/ui_layer/exit_button_texture/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="camera/layer/ui_layer/right_button_texture/right_button" to="." method="_on_right_button_pressed"]

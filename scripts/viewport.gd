@@ -33,3 +33,10 @@ func change_scene_to_file(path: String, clear_nodes: bool = false, emit_continue
 			i.queue_free()
 	$content.add_child(new_scene)
 	if emit_continue: transition_continue.emit()
+
+func show_transition_out():
+	$transition_layer/transition_rect.visible = true
+	$transition_layer/transition_rect.rotation = PI
+	$transition_layer/animation_player.play_backwards("transition")
+	await $transition_layer/animation_player.animation_finished
+	$transition_layer/transition_rect.visible = false

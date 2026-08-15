@@ -49,6 +49,7 @@ _data = {
 script = ExtResource("1_mjkpp")
 
 [node name="transition_layer" type="CanvasLayer" parent="." unique_id=3865024]
+layer = 2
 
 [node name="transition_rect" type="ColorRect" parent="transition_layer" unique_id=1569467154]
 visible = false
