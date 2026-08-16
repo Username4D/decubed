@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="7_8n3nq"]
 [ext_resource type="Shader" uid="uid://ba62kt1lol1tb" path="res://resources/contrast.gdshader" id="8_6k8qy"]
 [ext_resource type="PackedScene" uid="uid://ckcuolcsii1at" path="res://scenes/saw.tscn" id="8_8t3pq"]
+[ext_resource type="PackedScene" uid="uid://dn3ccusaf1vl2" path="res://scenes/mine_centered_spike.tscn" id="9_2rdwc"]
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="10_vm68j"]
 [ext_resource type="Texture2D" uid="uid://bx68yvr8lt27v" path="res://assets/list.svg" id="11_rth7s"]
 [ext_resource type="Texture2D" uid="uid://dcw31nj5gq5ww" path="res://assets/arrow-back-simple.svg" id="12_ngfo8"]
@@ -49,6 +50,7 @@ scenes/2/scene = ExtResource("2_58o6h")
 scenes/3/scene = ExtResource("5_2v7b3")
 scenes/4/scene = ExtResource("6_rth7s")
 scenes/5/scene = ExtResource("8_8t3pq")
+scenes/6/scene = ExtResource("9_2rdwc")
 
 [sub_resource type="TileSet" id="TileSet_7ka64"]
 tile_size = Vector2i(64, 64)
@@ -477,6 +479,8 @@ scale = Vector2(16, 3)
 tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAQAAAAYAAAAAAAAAAQAAAAcAAAAAAAAAAQAAAAgAAAAAAAAAAQAPAAkAAAAAAAAAAQAQAAkAAAAAAAAAAQARAAkAAAAAAAAAAQARAAEAAAAAAAAAAQARAAIAAAAAAAAAAQARAAQAAAAAAAAAAQARAAUAAAAAAAAAAQARAAYAAAAAAAAAAQA=")
 tile_set = SubResource("TileSet_7ka64")
 
+[node name="checkers" type="Node2D" parent="." unique_id=1585696396]
+
 [node name="foreground_tilemap" type="TileMapLayer" parent="." unique_id=684972773]
 position = Vector2(576, 320)
 scale = Vector2(1.29, 1.29)
@@ -584,8 +588,6 @@ offset_right = 64.0
 offset_bottom = 63.999996
 theme = ExtResource("10_vm68j")
 theme_type_variation = &"ButtonHighContrast"
-
-[node name="checkers" type="Node2D" parent="." unique_id=1585696396]
 
 [connection signal="death" from="player" to="." method="_on_player_death"]
 [connection signal="finished" from="player" to="." method="_on_player_finished"]

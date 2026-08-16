@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dn3ccusaf1vl2"]
+
+[ext_resource type="PackedScene" uid="uid://vynfktfqy0kk" path="res://scenes/spike.tscn" id="1_imgbl"]
+
+[node name="mine_centered_spike" type="Node2D" unique_id=1758976457]
+
+[node name="spike" parent="." unique_id=521260032 instance=ExtResource("1_imgbl")]
+position = Vector2(0, 16)
+scale = Vector2(0.5, 0.5)

@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	%texture_inner.scale = %texture_inner.scale.move_toward(Vector2.ONE if activated else Vector2(0.25, 0.25), delta * 2)
+	%texture_inner.scale = %texture_inner.scale.move_toward(Vector2.ONE if activated else Vector2(0.25, 0.25), delta *1.65)
 
 
 func _on_body_entered(body: Node2D) -> void:

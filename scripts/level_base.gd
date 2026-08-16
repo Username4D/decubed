@@ -7,7 +7,7 @@ var label_position_y = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in $checkers.get_children():
-		i.update.connect(refresh_checkers_status)
+		i.update_status.connect(refresh_checkers_status)
 	refresh_checkers_status()
 	$end_screen.visible = false
 	$player.spawn_point = $spawn_point.position
@@ -27,6 +27,9 @@ func _on_player_finished() -> void:
 	$animations.play("winscreen_flash")
 
 func _on_player_death() -> void:
+	for i in $checkers.get_children():
+		i.activated = false
+	refresh_checkers_status()
 	$animations.play("death_flash")
 
 
@@ -42,6 +45,7 @@ func refresh_checkers_status():
 	for i in $checkers.get_children():
 		if !i.activated: allow = false
 	checkers_allow_finish = allow
+	$finish.activated = allow
 func _on_next_button_pressed() -> void:
 	if ResourceLoader.exists("res://scenes/levels/%d.tscn" % (int(self.name) + 1)):
 		View.show_transition()

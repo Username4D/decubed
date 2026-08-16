@@ -46,7 +46,7 @@ player=""
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(1, 0.5193447, 0.7131392, 1)
+environment/defaults/default_clear_color=Color(0.46767026, 2.5027991e-06, 0.26281464, 1)
 
 [shader_globals]
 
