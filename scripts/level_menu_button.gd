@@ -10,6 +10,17 @@ func _ready() -> void:
 	$next_button_line.add_point(next_button_line_position * 2)
 	$Sprite2D.rotation_degrees = 90 * randi_range(0, 3)
 	$button.pressed.connect(func(): level_button_pressed.emit(self))
+	await SettingsHandler.has_loaded()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	print(id, " ", SettingsHandler.unlocked_levels)
+	if id > SettingsHandler.unlocked_levels:
+		$button.visible = false
+		$level_label.visible = false
+		$next_button_line.visible = false
+		self.scale = Vector2(0.75, 0.75)
+		self.self_modulate.a = 0
+		
 
 func update_palette():
 	$Sprite2D.modulate = ColorPalettes.palettes[palette_index].dark

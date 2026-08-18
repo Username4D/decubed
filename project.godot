@@ -19,6 +19,9 @@ config/icon="res://icon.svg"
 
 View="*uid://bo571aglf8wjl"
 ColorPalettes="*uid://u8a2ufdjts2o"
+SettingsHandler="*uid://uh18fhsr4lyr"
+CrazyGamesBridge="*uid://earhbes0vc0y"
+CrazyGames="*uid://dfjykmtiljrj5"
 
 [display]
 
@@ -26,7 +29,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/crazygames/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
 
 [file_customization]
 

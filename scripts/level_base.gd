@@ -25,6 +25,9 @@ func _process(delta: float) -> void:
 
 func _on_player_finished() -> void:
 	$animations.play("winscreen_flash")
+	if SettingsHandler.unlocked_levels <= int(self.name):
+		SettingsHandler.unlocked_levels = int(self.name) + 1
+		SettingsHandler.sdk_save()
 
 func _on_player_death() -> void:
 	for i in $checkers.get_children():
