@@ -6,7 +6,7 @@ var label_position_y = 0
 func _ready() -> void:
 	$background.visible = true
 	$animation.play("intro")
-	apply_palette(self, ColorPalettes.palettes[randi_range(0, len(ColorPalettes.palettes) - 1)])
+	apply_palette(self, ColorPalettes.palettes[randi_range(0, clamp(len(ColorPalettes.palettes) - 1, 0, floori(SettingsHandler.unlocked_levels / 10)))])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
