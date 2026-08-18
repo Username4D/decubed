@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://blujvfd5uvcn8"]
 
-[ext_resource type="Material" uid="uid://cyxw5n3k76owe" path="res://resources/color_palette.tres" id="1_wykyb"]
+[ext_resource type="Script" uid="uid://caklyvr1q7up5" path="res://scripts/wall.gd" id="1_2ktk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ka64"]
 size = Vector2(64, 64)
 
 [node name="wall" type="StaticBody2D" unique_id=46745935]
+script = ExtResource("1_2ktk7")
 
 [node name="texture" type="Polygon2D" parent="." unique_id=1044894577]
-material = ExtResource("1_wykyb")
-instance_shader_parameters/color = 2
-color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=2133874306]
