@@ -14,6 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$title_label.position.y = sin(label_position_y) * 8 + 256
 	label_position_y += delta * 2
+	$flash.modulate.a = 1 if SettingsHandler.settings["flashes_enabled"] else 0
 
 
 func _on_play_button_pressed() -> void:

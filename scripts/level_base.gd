@@ -17,6 +17,7 @@ func _ready() -> void:
 	$foreground_tilemap.self_modulate = ColorPalettes.palettes[palette_index].very_dark
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$flash.modulate.a = 1 if SettingsHandler.settings["flashes_enabled"] else 0
 	$label.position.y = sin(label_position_y) * 8
 	label_position_y += delta * 2
 	$camera.zoom.y = $camera.zoom.x
