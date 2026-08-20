@@ -5,6 +5,8 @@
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="3_wswnh"]
 [ext_resource type="PackedScene" uid="uid://dvpikh5nxdl25" path="res://scenes/setting_component_slider.tscn" id="4_lwwgp"]
 [ext_resource type="PackedScene" uid="uid://cu8rm8h41hiah" path="res://scenes/toggle_setting.tscn" id="5_bgjg7"]
+[ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="6_48ojb"]
+[ext_resource type="Texture2D" uid="uid://bn7cqeweeffyw" path="res://assets/first-page.svg" id="7_n35ux"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_labj1"]
 texture = ExtResource("2_wswnh")
@@ -89,34 +91,58 @@ offset_top = 160.0
 offset_right = 1056.0
 offset_bottom = 480.0
 
-[node name="setting_component_slider" parent="settings" unique_id=1868488964 groups=["color_dark"] instance=ExtResource("4_lwwgp")]
+[node name="setting_component_slider" parent="settings" unique_id=1868488964 instance=ExtResource("4_lwwgp")]
 layout_mode = 2
 setting_name = "music_volume"
 visual_name = "Music volume:"
 range_max = 1.0
 
-[node name="setting_component_slider2" parent="settings" unique_id=64992911 groups=["color_dark"] instance=ExtResource("4_lwwgp")]
+[node name="setting_component_slider2" parent="settings" unique_id=64992911 instance=ExtResource("4_lwwgp")]
 layout_mode = 2
 setting_name = "sfx_volume"
 visual_name = "SFX volume:"
 range_max = 1.0
 
-[node name="toggle_setting" parent="settings" unique_id=917464473 groups=["color_dark"] instance=ExtResource("5_bgjg7")]
+[node name="toggle_setting" parent="settings" unique_id=917464473 instance=ExtResource("5_bgjg7")]
 layout_mode = 2
 setting_name = "particles_enabled"
 visual_name = "Particles enabled:"
 
-[node name="toggle_setting2" parent="settings" unique_id=1461255664 groups=["color_dark"] instance=ExtResource("5_bgjg7")]
+[node name="toggle_setting2" parent="settings" unique_id=1461255664 instance=ExtResource("5_bgjg7")]
 layout_mode = 2
 setting_name = "flashes_enabled"
 visual_name = "Flashes enabled:"
 
-[node name="toggle_setting3" parent="settings" unique_id=1893233950 groups=["color_dark"] instance=ExtResource("5_bgjg7")]
+[node name="toggle_setting3" parent="settings" unique_id=1893233950 instance=ExtResource("5_bgjg7")]
 layout_mode = 2
 setting_name = "fast_transitions"
 visual_name = "Fast transitions:"
 
-[node name="toggle_setting4" parent="settings" unique_id=516932434 groups=["color_dark"] instance=ExtResource("5_bgjg7")]
+[node name="toggle_setting4" parent="settings" unique_id=516932434 instance=ExtResource("5_bgjg7")]
 layout_mode = 2
 setting_name = "timer_enabled"
 visual_name = "Timer enabled:"
+
+[node name="exit_button_texture" type="TextureRect" parent="." unique_id=1580021938 groups=["color_light"]]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.5176471, 0.7137255, 1)
+clip_children = 2
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("6_48ojb")
+texture = ExtResource("7_n35ux")
+expand_mode = 3
+
+[node name="exit_button" type="Button" parent="exit_button_texture" unique_id=844086580]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_48ojb")
+theme_type_variation = &"ButtonFullWhite"
+
+[connection signal="pressed" from="exit_button_texture/exit_button" to="." method="_on_exit_button_pressed"]

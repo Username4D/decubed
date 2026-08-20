@@ -11,8 +11,6 @@ func init(_value):
 	$toggle_button.button_pressed = _value
 	value = _value
 	await get_tree().process_frame
-	self.modulate = self.self_modulate
-	self.self_modulate = Color.WHITE
 	initialised = true	
 
 func _ready() -> void:

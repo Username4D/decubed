@@ -8,7 +8,7 @@ func _ready() -> void:
 	for i in $settings.get_children():
 		i.init(SettingsHandler.settings[i.setting_name])
 		i.updated.connect(func(): update(i))
-
+		i.modulate = ColorPalettes.current_palette.dark
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -29,3 +29,10 @@ func apply_palette(node: Node, pal: palette):
 func update(node: Node):
 	SettingsHandler.settings[node.setting_name] = node.value
 	SettingsHandler.sdk_save()
+
+
+func _on_exit_button_pressed() -> void:
+	View.show_transition()
+	await View.transition_midpoint
+	await get_tree().process_frame
+	View.change_scene_to_file("res://scenes/main_menu.tscn", true, true)

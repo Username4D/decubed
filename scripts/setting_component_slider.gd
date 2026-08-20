@@ -13,8 +13,6 @@ func init(_value):
 	$slider.value = _value
 	value = _value
 	await get_tree().process_frame
-	self.modulate = self.self_modulate
-	self.self_modulate = Color.WHITE
 	initialised = true
 
 # Called when the node enters the scene tree for the first time.

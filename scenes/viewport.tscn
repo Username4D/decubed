@@ -6,7 +6,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ru7vt"]
 shader = ExtResource("2_rhx5r")
 shader_parameter/progress = 0.0
-shader_parameter/diamondPixelSize = 64.0
+shader_parameter/diamondPixelSize = 80.0
 
 [sub_resource type="Animation" id="Animation_0wal2"]
 length = 0.001
