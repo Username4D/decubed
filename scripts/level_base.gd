@@ -4,12 +4,14 @@ extends Node2D
 
 var checkers_allow_finish = true
 var label_position_y = 0
+var timer_active = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in $checkers.get_children():
 		i.update_status.connect(refresh_checkers_status)
 	refresh_checkers_status()
 	$end_screen.visible = false
+	$timer.visible = SettingsHandler.settings["timer_enabled"]
 	$player.spawn_point = $spawn_point.position
 	await ColorPalettes.load_palette(palette_index)
 	$background.visible = true
@@ -22,13 +24,16 @@ func _process(delta: float) -> void:
 	label_position_y += delta * 2
 	$camera.zoom.y = $camera.zoom.x
 	$finish.modulate.a = move_toward($finish.modulate.a, 1 if checkers_allow_finish else 0, delta * 3)
-
+	if timer_active: SettingsHandler.timer_passed_time += delta
+	time_to_string(SettingsHandler.timer_passed_time)
+	
 
 func _on_player_finished() -> void:
+	timer_active = false
 	$animations.play("winscreen_flash")
 	if SettingsHandler.unlocked_levels <= int(self.name):
 		SettingsHandler.unlocked_levels = int(self.name) + 1
-		SettingsHandler.sdk_save()
+	SettingsHandler.sdk_save()
 
 func _on_player_death() -> void:
 	for i in $checkers.get_children():
@@ -58,3 +63,13 @@ func _on_next_button_pressed() -> void:
 		View.change_scene_to_file("res://scenes/levels/%d.tscn" % (int(self.name) + 1), true, true)
 	else:
 		push_error("level not found")
+
+func time_to_string(time: float):
+	var milliseconds = roundi((time - floor(time)) * 100)
+	var seconds = floori(time) % 60
+	var minutes = floori(time / 60)
+	var final_string: String = ""
+	%minutes.text = str(minutes) if str(minutes).length() != 1 else "0" + str(minutes)
+	%seconds.text = str(seconds) if str(seconds).length() != 1 else "0" + str(seconds)
+	%milliseconds.text = str(milliseconds) if str(milliseconds).length() != 1 else "0" + str(milliseconds)
+	
