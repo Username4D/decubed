@@ -24,11 +24,12 @@ func sdk_load():
 		if CrazyGames.Data.data_has_key(i):
 			if settings[i] is bool:
 				settings[i] = true if "true" == CrazyGames.Data.data_get_item(i) else false
-			if settings[i] is int:
+			elif settings[i] is int:
 				settings[i] = CrazyGames.Data.data_get_item(i).to_int()
-			if settings[i] is float:
+			elif settings[i] is float:
 				settings[i] = CrazyGames.Data.data_get_item(i).to_float()
 			else:
+				print("original value is ", settings[i], settings[i] is bool)
 				settings[i] = CrazyGames.Data.data_get_item(i)
 	if CrazyGames.Data.data_has_key("unlocked_levels"):
 		unlocked_levels = CrazyGames.Data.data_get_item("unlocked_levels").to_int()

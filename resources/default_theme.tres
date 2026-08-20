@@ -40,6 +40,8 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rdwc"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="MeshTexture" id="MeshTexture_k2ngq"]
+
 [sub_resource type="Gradient" id="Gradient_mwhd1"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 0, 0, 0.56078434)
@@ -76,7 +78,12 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.68235296)
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 4
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -152,9 +159,9 @@ ButtonHighContrast/styles/hover = SubResource("StyleBoxEmpty_k2ngq")
 ButtonHighContrast/styles/hover_pressed = SubResource("StyleBoxFlat_rth7s")
 ButtonHighContrast/styles/normal = SubResource("StyleBoxEmpty_8t3pq")
 ButtonHighContrast/styles/pressed = SubResource("StyleBoxFlat_2rdwc")
-HSlider/icons/grabber = null
-HSlider/icons/grabber_disabled = null
-HSlider/icons/grabber_highlight = null
+HSlider/icons/grabber = SubResource("MeshTexture_k2ngq")
+HSlider/icons/grabber_disabled = SubResource("MeshTexture_k2ngq")
+HSlider/icons/grabber_highlight = SubResource("MeshTexture_k2ngq")
 HSlider/icons/tick = SubResource("GradientTexture1D_nva1m")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_uwk1s")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w7mbl")

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dvpikh5nxdl25"]
+
+[ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="1_nwdx3"]
+[ext_resource type="Script" uid="uid://c5kssf6kieg5k" path="res://scripts/setting_component_slider.gd" id="1_yrrjf"]
+[ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="2_f0n1i"]
+
+[sub_resource type="FontVariation" id="FontVariation_mwhd1"]
+base_font = ExtResource("1_nwdx3")
+variation_opentype = {
+2003265652: 400
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ka64"]
+font = SubResource("FontVariation_mwhd1")
+font_size = 24
+
+[node name="setting_component_slider" type="Control" unique_id=1868488964]
+custom_minimum_size = Vector2(512, 48)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yrrjf")
+
+[node name="setting_title" type="Label" parent="." unique_id=1735338852]
+layout_mode = 0
+offset_left = 32.0
+offset_right = 256.0
+offset_bottom = 48.0
+text = "MY-NEW-SETTING"
+label_settings = SubResource("LabelSettings_7ka64")
+vertical_alignment = 1
+
+[node name="slider" type="HSlider" parent="." unique_id=1221154579]
+layout_mode = 0
+offset_left = 288.0
+offset_right = 480.0
+offset_bottom = 48.0
+theme = ExtResource("2_f0n1i")
+step = 0.1
+
+[connection signal="drag_ended" from="slider" to="." method="_on_slider_drag_ended"]

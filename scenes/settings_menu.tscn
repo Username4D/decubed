@@ -1,0 +1,122 @@
+[gd_scene format=4 uid="uid://djkherl0vxwmg"]
+
+[ext_resource type="Script" uid="uid://diyn6nmqg8boq" path="res://scripts/settings_menu.gd" id="1_cr101"]
+[ext_resource type="Texture2D" uid="uid://cub8pvg5ekimw" path="res://assets/tiles.svg" id="2_wswnh"]
+[ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="3_wswnh"]
+[ext_resource type="PackedScene" uid="uid://dvpikh5nxdl25" path="res://scenes/setting_component_slider.tscn" id="4_lwwgp"]
+[ext_resource type="PackedScene" uid="uid://cu8rm8h41hiah" path="res://scenes/toggle_setting.tscn" id="5_bgjg7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_labj1"]
+texture = ExtResource("2_wswnh")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lwwgp"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_labj1")
+
+[sub_resource type="FontVariation" id="FontVariation_ru7vt"]
+base_font = ExtResource("3_wswnh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_labj1"]
+font = SubResource("FontVariation_ru7vt")
+font_size = 74
+
+[node name="settings_menu" type="Node2D" unique_id=389327022]
+script = ExtResource("1_cr101")
+
+[node name="background" type="ColorRect" parent="." unique_id=1538310771 groups=["color_light"]]
+visible = false
+self_modulate = Color(1, 0.5176471, 0.7137255, 1)
+offset_left = -352.0
+offset_top = -288.0
+offset_right = 1536.0
+offset_bottom = 992.0
+
+[node name="background_tilemap" type="TileMapLayer" parent="." unique_id=1108520907 groups=["color_normal"]]
+self_modulate = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
+position = Vector2(576, 320)
+scale = Vector2(0.9, 0.9)
+tile_map_data = PackedByteArray("AAD3/wQAAAACAAIAAAD4/wQAAAACAAIAAAD5/wQAAAACAAIAAAD6/wQAAAACAAIAAAD7/wQAAAACAAIAAAD8/wQAAAACAAIAAAD9/wQAAAACAAIAAAD+/wQAAAACAAIAAAD//wQAAAACAAIAAAAAAAQAAAACAAIAAAABAAQAAAACAAIAAAACAAQAAAACAAIAAAADAAQAAAACAAIAAAAEAAQAAAACAAIAAAAFAAQAAAACAAIAAAAGAAQAAAACAAIAAAAHAAQAAAACAAIAAAAIAAQAAAACAAIAAAAJAAQAAAACAAIAAAAIAPv/AAACAAIAAAAIAPz/AAACAAIAAAAIAP3/AAACAAIAAAAIAP7/AAACAAIAAAAIAP//AAACAAIAAAAIAAAAAAACAAIAAAAIAAEAAAACAAIAAAAIAAIAAAACAAIAAAAIAAMAAAACAAIAAAAJAPv/AAACAAIAAAAJAPz/AAACAAIAAAAJAP3/AAACAAIAAAAJAP7/AAACAAIAAAAJAP//AAACAAIAAAAJAAAAAAACAAIAAAAJAAEAAAACAAIAAAAJAAIAAAACAAIAAAAJAAMAAAACAAIAAAD3//v/AAACAAIAAAD4//v/AAACAAIAAAD5//v/AAACAAIAAAD6//v/AAACAAIAAAD7//v/AAACAAIAAAD8//v/AAACAAIAAAD9//v/AAACAAIAAAD+//v/AAACAAIAAAD///v/AAACAAIAAAAAAPv/AAACAAIAAAABAPv/AAACAAIAAAACAPv/AAACAAIAAAADAPv/AAACAAIAAAAEAPv/AAACAAIAAAAFAPv/AAACAAIAAAAGAPv/AAACAAIAAAAHAPv/AAACAAIAAAD2//v/AAACAAIAAAD2//z/AAACAAIAAAD2//3/AAACAAIAAAD2//7/AAACAAIAAAD2////AAACAAIAAAD2/wAAAAACAAIAAAD2/wEAAAACAAIAAAD2/wIAAAACAAIAAAD2/wMAAAACAAIAAAD3//z/AAACAAIAAAD3//3/AAACAAIAAAD3//7/AAACAAIAAAD3////AAACAAIAAAD3/wAAAAACAAIAAAD3/wEAAAACAAIAAAD3/wIAAAACAAIAAAD3/wMAAAACAAIAAAD2/wQAAAACAAIAAAD4/wMAAAAAAAEAAAD4/wIAAAAAAAEAADD5/wMAAAAAAAEAAFD4//z/AAAAAAEAAFD4//3/AAAAAAEAAGD5//z/AAAAAAEAAAD9//z/AAAAAAEAAAD+//z/AAAAAAEAADAHAPz/AAAAAAEAAGAGAPz/AAAAAAEAAAAHAP3/AAAAAAEAADAHAAEAAAAAAAEAAGAHAAMAAAAAAAEAADAGAAMAAAAAAAEAAGAFAAMAAAAAAAEAAAD4////AAAAAAEAAAD4/wAAAAAAAAEAAFD4/wEAAAAAAAEAAAD5/wEAAAAAAAEAAGD5/wIAAAAAAAEAAGD6//z/AAAAAAEAADD6/wMAAAAAAAEAADD8//z/AAAAAAEAAFD+/wMAAAAAAAEAAFD//wMAAAAAAAEAAGACAPz/AAAAAAEAAGADAPz/AAAAAAEAAAADAAMAAAAAAAEAAAAEAPz/AAAAAAEAAFAEAAMAAAAAAAEAADAGAP3/AAAAAAEAAAAGAAIAAAAAAAEAADAHAP7/AAAAAAEAAFAHAAAAAAAAAAEAAAAHAAIAAAAAAAEAAFA=")
+tile_set = SubResource("TileSet_lwwgp")
+
+[node name="wall" type="Polygon2D" parent="." unique_id=2026405728 groups=["color_dark"]]
+self_modulate = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+polygon = PackedVector2Array(-128, -192, -128, 832, 1280, 832, 1280, -192, 512, -192, 512, 32, 512, 64, 1088, 64, 1088, 576, 64, 576, 64, 64, 608, 64, 608, -192)
+
+[node name="camera" type="Camera2D" parent="." unique_id=218015500]
+position = Vector2(576, 320)
+
+[node name="foreground_tilemap" type="TileMapLayer" parent="." unique_id=1408247108 groups=["color_very_dark"]]
+self_modulate = Color(0.0749534, 0.00027683604, 0.104755946, 1)
+position = Vector2(576, 320)
+scale = Vector2(1.29, 1.29)
+tile_map_data = PackedByteArray("AAD4/wQAAAAAAAEAAFD4//v/AAAAAAEAADAAAPv/AAAAAAEAAAAHAPv/AAAAAAEAAFAHAAQAAAAAAAEAADAGAAQAAAAAAAEAAGD4//z/AAAAAAEAAGD4/wMAAAAAAAEAAGD4/wIAAAAAAAEAADD9//v/AAAAAAEAAGD6//v/AAAAAAEAADAFAPv/AAAAAAEAADAGAPv/AAAAAAEAAGAHAAMAAAAAAAEAADAHAAIAAAAAAAEAAGAHAAEAAAAAAAEAADD5/wQAAAAAAAEAAAD6/wQAAAAAAAEAAGD+/wQAAAAAAAEAAFABAAQAAAAAAAEAAFD3//v/AAAAAAEAADD3//z/AAAAAAEAAAD3//3/AAAAAAEAAFD3//7/AAAAAAEAAGD3/wEAAAAAAAEAAGD3/wIAAAAAAAEAAFD3/wMAAAAAAAEAAAD3/wQAAAAAAAEAAGAIAP//AAAAAAEAADAIAAAAAAAAAAEAAGAIAAEAAAAAAAEAAAAIAAIAAAAAAAEAAFAIAAMAAAAAAAEAAAAIAAQAAAAAAAEAADAIAPv/AAAAAAEAAAAIAPz/AAAAAAEAAGD5//v/AAAAAAEAAAD7//v/AAAAAAEAAGD7/wQAAAAAAAEAAFD8/wQAAAAAAAEAAGD9/wQAAAAAAAEAADABAPv/AAAAAAEAAFACAPv/AAAAAAEAAGACAAQAAAAAAAEAADADAAQAAAAAAAEAAGAEAAQAAAAAAAEAADAFAAQAAAAAAAEAAAAHAPz/AAAAAAEAADAIAP3/AAAAAAEAAFA=")
+tile_set = SubResource("TileSet_lwwgp")
+
+[node name="title_label" type="Label" parent="." unique_id=737202476 groups=["color_dark"]]
+self_modulate = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 576.0
+offset_bottom = 352.0
+text = "Settings:"
+label_settings = SubResource("LabelSettings_labj1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings" type="VBoxContainer" parent="." unique_id=2130486566]
+offset_left = 544.0
+offset_top = 160.0
+offset_right = 1056.0
+offset_bottom = 480.0
+
+[node name="setting_component_slider" parent="settings" unique_id=1868488964 groups=["color_dark"] instance=ExtResource("4_lwwgp")]
+layout_mode = 2
+setting_name = "music_volume"
+visual_name = "Music volume:"
+range_max = 1.0
+
+[node name="setting_component_slider2" parent="settings" unique_id=64992911 groups=["color_dark"] instance=ExtResource("4_lwwgp")]
+layout_mode = 2
+setting_name = "sfx_volume"
+visual_name = "SFX volume:"
+range_max = 1.0
+
+[node name="toggle_setting" parent="settings" unique_id=917464473 groups=["color_dark"] instance=ExtResource("5_bgjg7")]
+layout_mode = 2
+setting_name = "particles_enabled"
+visual_name = "Particles enabled:"
+
+[node name="toggle_setting2" parent="settings" unique_id=1461255664 groups=["color_dark"] instance=ExtResource("5_bgjg7")]
+layout_mode = 2
+setting_name = "flashes_enabled"
+visual_name = "Flashes enabled:"
+
+[node name="toggle_setting3" parent="settings" unique_id=1893233950 groups=["color_dark"] instance=ExtResource("5_bgjg7")]
+layout_mode = 2
+setting_name = "fast_transitions"
+visual_name = "Fast transitions:"
+
+[node name="toggle_setting4" parent="settings" unique_id=516932434 groups=["color_dark"] instance=ExtResource("5_bgjg7")]
+layout_mode = 2
+setting_name = "timer_enabled"
+visual_name = "Timer enabled:"
