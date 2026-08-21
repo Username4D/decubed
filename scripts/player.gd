@@ -61,3 +61,7 @@ func finish(finish_object: Node):
 		finish_position = finish_object.position
 		state = states.FINISHED
 		speed = 0
+
+func _ready() -> void:
+	await get_tree().process_frame
+	$texture.self_modulate = ColorPalettes.current_palette.dark

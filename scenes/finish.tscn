@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cwj52tuvww00o" path="res://assets/particle.png" id="1_5nbog"]
 [ext_resource type="Script" uid="uid://ca6qocbgi8adr" path="res://scripts/finish.gd" id="1_07gpw"]
+[ext_resource type="Texture2D" uid="uid://dcw31nj5gq5ww" path="res://assets/arrow-back-simple.svg" id="3_2pftv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ka64"]
 radius = 32.0
@@ -22,6 +23,7 @@ visible = false
 shape = SubResource("CircleShape2D_7ka64")
 
 [node name="particles" type="CPUParticles2D" parent="." unique_id=386023019]
+visible = false
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_5nbog")
 lifetime = 1.4
@@ -36,5 +38,29 @@ scale_amount_min = 0.5
 scale_amount_max = 0.5
 scale_amount_curve = SubResource("Curve_jf1dd")
 color_ramp = SubResource("Gradient_07gpw")
+
+[node name="a" type="Sprite2D" parent="." unique_id=25292887]
+position = Vector2(-5.656856, -6.411842)
+rotation = 0.7853982
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("3_2pftv")
+
+[node name="aa" type="Sprite2D" parent="." unique_id=1799960532]
+position = Vector2(5.6568522, 4.9018664)
+rotation = -2.3561945
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("3_2pftv")
+
+[node name="aaa" type="Sprite2D" parent="." unique_id=503980368]
+position = Vector2(-8.533852, -0.5338478)
+rotation = 0.014675336
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("3_2pftv")
+
+[node name="aaaa" type="Sprite2D" parent="." unique_id=1977630072]
+position = Vector2(7.4661484, -0.5338478)
+rotation = 3.1562681
+scale = Vector2(0.33333334, 0.33333334)
+texture = ExtResource("3_2pftv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

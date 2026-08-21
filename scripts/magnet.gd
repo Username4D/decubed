@@ -6,6 +6,7 @@ func _ready() -> void:
 	for i in range(0, 72.0):
 		$line.add_point(Vector2(cos(i / 72.0 * 2 * PI), sin(i / 72.0 * 2 * PI)) * 256)
 		print(Vector2(cos(i / 18.0 * 2 * PI), sin(i / 18.0 * 2 * PI)) * 256)
+	$particles.visible = SettingsHandler.settings["particles_enabled"]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass

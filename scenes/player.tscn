@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://f1uag5cn8vde"]
 
 [ext_resource type="Script" uid="uid://b6q12tpufmjh8" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Material" uid="uid://cyxw5n3k76owe" path="res://resources/color_palette.tres" id="2_g2els"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ka64"]
-bg_color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -123,8 +122,6 @@ acceleration = 1000
 friction = 1700
 
 [node name="texture" type="Panel" parent="." unique_id=1191240159]
-material = ExtResource("2_g2els")
-instance_shader_parameters/color = 2
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0

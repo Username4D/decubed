@@ -8,4 +8,11 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _ready() -> void:
 	await get_tree().process_frame
-	$particles.self_modulate = ColorPalettes.current_palette.dark
+	self.modulate = ColorPalettes.current_palette.dark
+	if SettingsHandler.settings["particles_enabled"]:
+		$particles.visible = true
+		$a.visible = false
+		$aa.visible = false
+		$aa.visible = false
+		$aa.visible = false
+		
