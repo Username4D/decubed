@@ -36,3 +36,12 @@ func _on_exit_button_pressed() -> void:
 	await View.transition_midpoint
 	await get_tree().process_frame
 	View.change_scene_to_file("res://scenes/main_menu.tscn", true, true)
+
+
+func _on_credits_button_pressed() -> void:
+	$credits.visible = true
+
+
+
+func _on_credits_exit_button_pressed() -> void:
+	$credits.visible = false

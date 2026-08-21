@@ -16,6 +16,7 @@
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="10_vm68j"]
 [ext_resource type="Texture2D" uid="uid://bx68yvr8lt27v" path="res://assets/list.svg" id="11_rth7s"]
 [ext_resource type="Texture2D" uid="uid://dcw31nj5gq5ww" path="res://assets/arrow-back-simple.svg" id="12_ngfo8"]
+[ext_resource type="Texture2D" uid="uid://bn7cqeweeffyw" path="res://assets/first-page.svg" id="17_agxjp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2v7b3"]
 texture = ExtResource("4_8n3nq")
@@ -507,8 +508,6 @@ libraries/ = SubResource("AnimationLibrary_8n3nq")
 [node name="label" type="Label" parent="." unique_id=1536924425]
 visible = false
 material = SubResource("ShaderMaterial_1vn1j")
-instance_shader_parameters/alternative_color = 0
-instance_shader_parameters/color = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -546,8 +545,6 @@ grow_vertical = 2
 self_modulate = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
 clip_children = 2
 material = SubResource("ShaderMaterial_mgw4r")
-instance_shader_parameters/alternative_color = 0
-instance_shader_parameters/color = 2
 layout_mode = 1
 offset_left = 496.0
 offset_top = 384.0
@@ -571,8 +568,6 @@ theme_type_variation = &"ButtonFullWhite"
 self_modulate = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
 clip_children = 2
 material = SubResource("ShaderMaterial_mgw4r")
-instance_shader_parameters/alternative_color = 0
-instance_shader_parameters/color = 2
 layout_mode = 0
 offset_left = 592.0
 offset_top = 384.0
@@ -667,7 +662,30 @@ label_settings = SubResource("LabelSettings_ru7vt")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="exit_button_texture" type="TextureRect" parent="." unique_id=1046544001]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.5176471, 0.7137255, 1)
+clip_children = 2
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("10_vm68j")
+texture = ExtResource("17_agxjp")
+expand_mode = 3
+
+[node name="exit_button" type="Button" parent="exit_button_texture" unique_id=2039353669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_vm68j")
+theme_type_variation = &"ButtonFullWhite"
+
 [connection signal="death" from="player" to="." method="_on_player_death"]
 [connection signal="finished" from="player" to="." method="_on_player_finished"]
 [connection signal="pressed" from="end_screen/menu_texture/menu_button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="end_screen/next_texture/next_button" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="exit_button_texture/exit_button" to="." method="_on_exit_button_pressed"]

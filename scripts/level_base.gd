@@ -7,6 +7,7 @@ var label_position_y = 0
 var timer_active = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	CrazyGames.Game.gameplay_start()
 	for i in $checkers.get_children():
 		i.update_status.connect(refresh_checkers_status)
 	refresh_checkers_status()
@@ -15,6 +16,7 @@ func _ready() -> void:
 	$player.spawn_point = $spawn_point.position
 	await ColorPalettes.load_palette(palette_index)
 	$background.visible = true
+	$exit_button_texture.self_modulate = ColorPalettes.current_palette.light
 	$background_tilemap.self_modulate = ColorPalettes.palettes[palette_index].normal
 	$foreground_tilemap.self_modulate = ColorPalettes.palettes[palette_index].very_dark
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,3 +75,10 @@ func time_to_string(time: float):
 	%seconds.text = str(seconds) if str(seconds).length() != 1 else "0" + str(seconds)
 	%milliseconds.text = str(milliseconds) if str(milliseconds).length() != 1 else "0" + str(milliseconds)
 	
+
+
+func _on_exit_button_pressed() -> void:
+	View.show_transition()
+	await View.transition_midpoint
+	await get_tree().process_frame
+	View.change_scene_to_file("res://scenes/level_menu_pages_host.tscn", true, true)

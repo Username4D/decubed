@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cu8rm8h41hiah" path="res://scenes/toggle_setting.tscn" id="5_bgjg7"]
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="6_48ojb"]
 [ext_resource type="Texture2D" uid="uid://bn7cqeweeffyw" path="res://assets/first-page.svg" id="7_n35ux"]
+[ext_resource type="Texture2D" uid="uid://bkp5rxbasf5il" path="res://assets/copyright.svg" id="8_n35ux"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_labj1"]
 texture = ExtResource("2_wswnh")
@@ -87,7 +88,7 @@ vertical_alignment = 1
 
 [node name="settings" type="VBoxContainer" parent="." unique_id=2130486566]
 offset_left = 544.0
-offset_top = 160.0
+offset_top = 128.0
 offset_right = 1056.0
 offset_bottom = 480.0
 
@@ -145,4 +146,172 @@ grow_vertical = 2
 theme = ExtResource("6_48ojb")
 theme_type_variation = &"ButtonFullWhite"
 
+[node name="credits_texture" type="Sprite2D" parent="." unique_id=557889269 groups=["color_dark"]]
+clip_children = 2
+position = Vector2(800, 480)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_n35ux")
+
+[node name="credits_button" type="Button" parent="credits_texture" unique_id=1051478101]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme = ExtResource("6_48ojb")
+theme_type_variation = &"ButtonFullWhite"
+
+[node name="credits" type="ColorRect" parent="." unique_id=2017589724]
+visible = false
+offset_right = 1152.0
+offset_bottom = 672.0
+color = Color(0, 0, 0, 0.90588236)
+
+[node name="title_label" type="Label" parent="credits" unique_id=1542277520]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 576.0
+offset_bottom = 352.0
+text = "Credits:"
+label_settings = SubResource("LabelSettings_labj1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="credits_container" type="ScrollContainer" parent="credits/title_label" unique_id=1907537017]
+layout_mode = 0
+offset_left = 512.0
+offset_top = -128.0
+offset_right = 960.0
+offset_bottom = 256.0
+theme = ExtResource("6_48ojb")
+
+[node name="Label" type="Label" parent="credits/title_label/credits_container" unique_id=608949836]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_wswnh")
+theme_override_font_sizes/font_size = 12
+text = "Godot engine:
+https://godotengine.org/license/
+
+Font:
+Copyright 2011 The Quicksand Project Authors (https://github.com/andrew-paglinawan/QuicksandFamily), with Reserved Font Name “Quicksand”.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+https://openfontlicense.org
+
+
+-----------------------------------------------------------
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
+-----------------------------------------------------------
+
+PREAMBLE
+The goals of the Open Font License (OFL) are to stimulate worldwide
+development of collaborative font projects, to support the font creation
+efforts of academic and linguistic communities, and to provide a free and
+open framework in which fonts may be shared and improved in partnership
+with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and
+redistributed freely as long as they are not sold by themselves. The
+fonts, including any derivative works, can be bundled, embedded, 
+redistributed and/or sold with any software provided that any reserved
+names are not used by derivative works. The fonts and derivatives,
+however, cannot be released under any other type of license. The
+requirement for fonts to remain under this license does not apply
+to any document created using the fonts or their derivatives.
+
+DEFINITIONS
+\"Font Software\" refers to the set of files released by the Copyright
+Holder(s) under this license and clearly marked as such. This may
+include source files, build scripts and documentation.
+
+\"Reserved Font Name\" refers to any names specified as such after the
+copyright statement(s).
+
+\"Original Version\" refers to the collection of Font Software components as
+distributed by the Copyright Holder(s).
+
+\"Modified Version\" refers to any derivative made by adding to, deleting,
+or substituting -- in part or in whole -- any of the components of the
+Original Version, by changing formats or by porting the Font Software to a
+new environment.
+
+\"Author\" refers to any designer, engineer, programmer, technical
+writer or other person who contributed to the Font Software.
+
+PERMISSION & CONDITIONS
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of the Font Software, to use, study, copy, merge, embed, modify,
+redistribute, and sell modified and unmodified copies of the Font
+Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components,
+in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled,
+redistributed and/or sold with any software, provided that each copy
+contains the above copyright notice and this license. These can be
+included either as stand-alone text files, human-readable headers or
+in the appropriate machine-readable metadata fields within text or
+binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font
+Name(s) unless explicit written permission is granted by the corresponding
+Copyright Holder. This restriction only applies to the primary font name as
+presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+Software shall not be used to promote, endorse or advertise any
+Modified Version, except to acknowledge the contribution(s) of the
+Copyright Holder(s) and the Author(s) or with their explicit written
+permission.
+
+5) The Font Software, modified or unmodified, in part or in whole,
+must be distributed entirely under this license, and must not be
+distributed under any other license. The requirement for fonts to
+remain under this license does not apply to any document created
+using the Font Software.
+
+TERMINATION
+This license becomes null and void if any of the above conditions are
+not met.
+
+DISCLAIMER
+THE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+OTHER DEALINGS IN THE FONT SOFTWARE.
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="credits_exit_button_texture" type="TextureRect" parent="credits" unique_id=1153821892]
+clip_children = 2
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("6_48ojb")
+texture = ExtResource("7_n35ux")
+expand_mode = 3
+
+[node name="credits_exit_button" type="Button" parent="credits/credits_exit_button_texture" unique_id=265723203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_48ojb")
+theme_type_variation = &"ButtonFullWhite"
+
 [connection signal="pressed" from="exit_button_texture/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="credits_texture/credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="credits/credits_exit_button_texture/credits_exit_button" to="." method="_on_credits_exit_button_pressed"]

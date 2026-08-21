@@ -11,6 +11,7 @@ func _ready() -> void:
 	View.show_transition_out()
 	await get_tree().process_frame
 	await View.change_scene_to_file("res://scenes/main_menu.tscn")
+
 	self.queue_free()
 
 
