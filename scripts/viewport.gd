@@ -5,9 +5,11 @@ signal transition_midpoint
 signal transition_continue
 signal transition_finished
 
+var can_show_ad = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	get_tree().create_timer(180).timeout.connect(func(): can_show_ad = true)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +22,12 @@ func show_transition():
 	$transition_layer/transition_rect.visible = true
 	$transition_layer/animation_player.play("transition")
 	await $transition_layer/animation_player.animation_finished
+	if can_show_ad:
+		var result = await CrazyGames.Ad.request_ad_async("midgame")
+		print(result)
+		can_show_ad = false
+		get_tree().create_timer(240).timeout.connect(func(): can_show_ad = true)
+
 	transition_midpoint.emit()
 	await transition_continue
 	$transition_layer/transition_rect.rotation = PI

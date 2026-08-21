@@ -45,11 +45,12 @@ func _on_player_death() -> void:
 
 
 func _on_menu_button_pressed() -> void:
+	CrazyGames.Game.gameplay_stop()
 	View.show_transition()
 	await View.transition_midpoint
 	await get_tree().process_frame
 	View.change_scene_to_file("res://scenes/level_menu_pages_host.tscn", true, true)
-
+	
 
 func refresh_checkers_status():
 	var allow = true
@@ -78,6 +79,7 @@ func time_to_string(time: float):
 
 
 func _on_exit_button_pressed() -> void:
+	CrazyGames.Game.gameplay_stop()
 	View.show_transition()
 	await View.transition_midpoint
 	await get_tree().process_frame
