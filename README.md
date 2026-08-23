@@ -12,6 +12,8 @@ The game requires the crazygames sdk which can be downloaded from the godot asse
 
 ## Playing the game:
 
-Since this game is planned to possibly release on crazygames, there is currently no other web host planned for the game. You can however play it yourself if you want to, by downloading and opening the project in godot, adding and enabling the crazygames extension, and testing the game in your browser, using godots web deploy feature.
+Since this game is planned to possibly release on crazygames, there is currently no other web host planned for the game. You can however play it yourself if you want to, by downloading and opening the project in godot, adding and enabling the crazygames extension, and testing the game in your browser, using godots web deploy feature. It can also be ran by getting a compiled webversion from the releases page, downloading and extracting it, and running:
+`python serve.py --root .`
+In this case only python is needed as a dependency.
 
  
