@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cr1hd4nrpdixa" path="res://scripts/toggle_setting.gd" id="1_c5ewf"]
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="2_k7y7b"]
 [ext_resource type="Texture2D" uid="uid://cwj52tuvww00o" path="res://assets/particle.png" id="3_fs2v6"]
+[ext_resource type="Script" uid="uid://7tasog3xmy2f" path="res://scripts/sfx_button.gd" id="3_k7y7b"]
 
 [sub_resource type="FontVariation" id="FontVariation_mwhd1"]
 base_font = ExtResource("2_k7y7b")
@@ -38,13 +39,15 @@ text = "MY-NEW-SETTING"
 label_settings = SubResource("LabelSettings_8cmes")
 vertical_alignment = 1
 
-[node name="toggle_button" type="Button" parent="." unique_id=764749340]
+[node name="toggle_button" type="Button" parent="." unique_id=1086404331]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 448.0
 offset_right = 512.0
 offset_bottom = 48.0
 toggle_mode = true
+script = ExtResource("3_k7y7b")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [node name="toggle_texture" type="Sprite2D" parent="." unique_id=1694348482]
 position = Vector2(464, 24)

@@ -16,6 +16,7 @@
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="10_vm68j"]
 [ext_resource type="Texture2D" uid="uid://bx68yvr8lt27v" path="res://assets/list.svg" id="11_rth7s"]
 [ext_resource type="Texture2D" uid="uid://dcw31nj5gq5ww" path="res://assets/arrow-back-simple.svg" id="12_ngfo8"]
+[ext_resource type="Script" uid="uid://7tasog3xmy2f" path="res://scripts/sfx_button.gd" id="16_117i7"]
 [ext_resource type="Texture2D" uid="uid://bn7cqeweeffyw" path="res://assets/first-page.svg" id="17_agxjp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2v7b3"]
@@ -555,7 +556,7 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("11_rth7s")
 expand_mode = 3
 
-[node name="menu_button" type="Button" parent="end_screen/menu_texture" unique_id=741319112]
+[node name="menu_button" type="Button" parent="end_screen/menu_texture" unique_id=678191981]
 material = ExtResource("2_ngfo8")
 instance_shader_parameters/color = 1
 layout_mode = 0
@@ -563,6 +564,8 @@ offset_right = 64.0
 offset_bottom = 64.0
 theme = ExtResource("10_vm68j")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("16_117i7")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [node name="next_texture" type="TextureRect" parent="end_screen" unique_id=40818227]
 self_modulate = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
@@ -579,7 +582,7 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("12_ngfo8")
 expand_mode = 3
 
-[node name="next_button" type="Button" parent="end_screen/next_texture" unique_id=1559981480]
+[node name="next_button" type="Button" parent="end_screen/next_texture" unique_id=1562233780]
 material = ExtResource("2_ngfo8")
 instance_shader_parameters/color = 1
 layout_mode = 0
@@ -587,6 +590,8 @@ offset_right = 64.0
 offset_bottom = 63.999996
 theme = ExtResource("10_vm68j")
 theme_type_variation = &"ButtonHighContrast"
+script = ExtResource("16_117i7")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [node name="timer" type="Control" parent="." unique_id=1113963093]
 layout_mode = 3
@@ -674,7 +679,7 @@ theme = ExtResource("10_vm68j")
 texture = ExtResource("17_agxjp")
 expand_mode = 3
 
-[node name="exit_button" type="Button" parent="exit_button_texture" unique_id=2039353669]
+[node name="exit_button" type="Button" parent="exit_button_texture" unique_id=2073055038]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -683,6 +688,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("10_vm68j")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("16_117i7")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [connection signal="death" from="player" to="." method="_on_player_death"]
 [connection signal="finished" from="player" to="." method="_on_player_finished"]

@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="2_5mjou"]
 [ext_resource type="Texture2D" uid="uid://dcw31nj5gq5ww" path="res://assets/arrow-back-simple.svg" id="3_apc0m"]
 [ext_resource type="Texture2D" uid="uid://bn7cqeweeffyw" path="res://assets/first-page.svg" id="5_apc0m"]
+[ext_resource type="Script" uid="uid://7tasog3xmy2f" path="res://scripts/sfx_button.gd" id="5_h42hq"]
 
 [node name="level_menu_pages_host" type="Node2D" unique_id=1391140696]
 script = ExtResource("1_5mjou")
@@ -59,7 +60,7 @@ theme = ExtResource("2_5mjou")
 texture = ExtResource("3_apc0m")
 expand_mode = 3
 
-[node name="left_button" type="Button" parent="camera/layer/ui_layer/left_button_texture" unique_id=1479487333]
+[node name="left_button" type="Button" parent="camera/layer/ui_layer/left_button_texture" unique_id=989488243]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -69,6 +70,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_5mjou")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("5_h42hq")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [node name="exit_button_texture" type="TextureRect" parent="camera/layer/ui_layer" unique_id=1281123644]
 unique_name_in_owner = true
@@ -83,7 +86,7 @@ theme = ExtResource("2_5mjou")
 texture = ExtResource("5_apc0m")
 expand_mode = 3
 
-[node name="exit_button" type="Button" parent="camera/layer/ui_layer/exit_button_texture" unique_id=695692037]
+[node name="exit_button" type="Button" parent="camera/layer/ui_layer/exit_button_texture" unique_id=700625401]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,6 +95,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_5mjou")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("5_h42hq")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [node name="right_button_texture" type="TextureRect" parent="camera/layer/ui_layer" unique_id=1097993252]
 unique_name_in_owner = true
@@ -109,7 +114,7 @@ theme = ExtResource("2_5mjou")
 texture = ExtResource("3_apc0m")
 expand_mode = 3
 
-[node name="right_button" type="Button" parent="camera/layer/ui_layer/right_button_texture" unique_id=656963195]
+[node name="right_button" type="Button" parent="camera/layer/ui_layer/right_button_texture" unique_id=1323976118]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -119,6 +124,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_5mjou")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("5_h42hq")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [connection signal="pressed" from="camera/layer/ui_layer/left_button_texture/left_button" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="camera/layer/ui_layer/exit_button_texture/exit_button" to="." method="_on_exit_button_pressed"]

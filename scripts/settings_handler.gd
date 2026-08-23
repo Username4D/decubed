@@ -1,6 +1,6 @@
 extends Node
 
-var settings = {"music_volume": 0.5, "sfx_volume": 0.5, "particles_enabled": true, "flashes_enabled": true, "fast_transitions": false, "timer_enabled": false}
+var settings = {"music_volume": 0.5, "sfx_volume": 0.7, "particles_enabled": true, "flashes_enabled": true, "fast_transitions": false, "timer_enabled": false}
 var unlocked_levels = 1
 var timer_passed_time: float = 0
 var initialised = false

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cub8pvg5ekimw" path="res://assets/tiles.svg" id="2_wqvpk"]
 [ext_resource type="Script" uid="uid://dowycgdx7jocd" path="res://scripts/level_menu_button.gd" id="2_wtr5b"]
 [ext_resource type="FontFile" uid="uid://w40omniksepc" path="res://assets/Quicksand-VariableFont_wght.ttf" id="4_wqvpk"]
+[ext_resource type="Script" uid="uid://7tasog3xmy2f" path="res://scripts/sfx_button.gd" id="5_wtr5b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ka64"]
 bg_color = Color(1, 1, 1, 1)
@@ -60,8 +61,10 @@ position = Vector2(32, 32)
 points = PackedVector2Array(0, 0)
 default_color = Color(0.15009594, 2.7229973e-05, 0.16345075, 1)
 
-[node name="button" type="Button" parent="." unique_id=1939947717]
+[node name="button" type="Button" parent="." unique_id=481891123]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 theme = ExtResource("1_ngtly")
+script = ExtResource("5_wtr5b")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"

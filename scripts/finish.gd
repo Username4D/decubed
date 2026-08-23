@@ -4,6 +4,7 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and activated:
+		AudioHandler.play_sfx("finish")
 		body.finish(self)
 
 func _ready() -> void:

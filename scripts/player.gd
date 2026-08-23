@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var finish_acceleration = 2
 @export var finish_speed = 0
 
+var in_air = false
+var can_play_jump = false
 enum states {ALIVE, FINISHED, DEAD}
 @export var state = states.ALIVE
 
@@ -19,6 +21,11 @@ signal finished
 signal respawn
 
 func _physics_process(delta: float) -> void:
+	if !is_on_floor():
+		in_air = true
+	elif in_air and can_play_jump:
+		AudioHandler.play_sfx("land")
+		in_air = false
 	if state == states.ALIVE:
 		var direction = Input.get_axis("ui_left", "ui_right")
 		if direction == 0:
@@ -32,10 +39,12 @@ func _physics_process(delta: float) -> void:
 		
 		if Input.is_action_just_pressed("ui_up") and is_on_floor():
 			velocity.y -= jump_strength
+			AudioHandler.play_sfx("jump")
 		
 		velocity.x = speed
 		velocity.y += get_gravity().y * delta
 		move_and_slide()
+	
 	if state == states.FINISHED:
 		finish_speed = move_toward(finish_speed, max_finish_speed, delta * finish_acceleration)
 		self.position = self.position.move_toward(finish_position, finish_speed)
@@ -44,6 +53,9 @@ func _physics_process(delta: float) -> void:
 		self.rotation_degrees += delta * finish_speed * 60
 func kill():
 	if state == states.ALIVE:
+		AudioHandler.play_sfx("death")
+		can_play_jump = false
+		in_air = false
 		speed = 0
 		velocity = Vector2.ZERO
 		death.emit()
@@ -54,6 +66,10 @@ func kill():
 		respawn.emit()
 		$animations.play_backwards("death")
 		state = states.ALIVE
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+		in_air = false
+		can_play_jump = true
 
 func finish(finish_object: Node):
 	if state == states.ALIVE:
@@ -65,3 +81,6 @@ func finish(finish_object: Node):
 func _ready() -> void:
 	await get_tree().process_frame
 	$texture.self_modulate = ColorPalettes.current_palette.dark
+	await get_tree().physics_frame
+	in_air = false
+	can_play_jump = true

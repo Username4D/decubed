@@ -6,6 +6,13 @@ var playback: AudioStreamPlaybackPolyphonic
 var streams: Dictionary = {
 	"loop_menu": load("res://assets/loop_menu.ogg"),
 	"loop_ingame": load("res://assets/loop_ingame.ogg"),
+	"death": load("res://assets/sfx/death.ogg"),
+	"finish": load("res://assets/sfx/finish.ogg"),
+	"hover": load("res://assets/sfx/hover.wav"),
+	"input": load("res://assets/sfx/input.wav"),
+	"jump": load("res://assets/sfx/jump.ogg"),
+	"land": load("res://assets/sfx/land.ogg"),
+	"switch": load("res://assets/sfx/switch.ogg")
 }
 var ingame = false
 var playing_ad = false
@@ -20,9 +27,13 @@ func init() -> void:
 
 
 func _ready() -> void:
+	self.volume_linear = 4
+	self.bus = "sfx"
 	await CrazyGames.is_initialised_async()
 	update_settings(true)
 
+func play_sfx(name: String):
+	playback.play_stream(streams[name])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

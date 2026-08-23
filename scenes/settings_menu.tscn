@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cu8rm8h41hiah" path="res://scenes/toggle_setting.tscn" id="5_bgjg7"]
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="6_48ojb"]
 [ext_resource type="Texture2D" uid="uid://bn7cqeweeffyw" path="res://assets/first-page.svg" id="7_n35ux"]
+[ext_resource type="Script" uid="uid://7tasog3xmy2f" path="res://scripts/sfx_button.gd" id="8_fb6cq"]
 [ext_resource type="Texture2D" uid="uid://bkp5rxbasf5il" path="res://assets/copyright.svg" id="8_n35ux"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_labj1"]
@@ -136,7 +137,7 @@ theme = ExtResource("6_48ojb")
 texture = ExtResource("7_n35ux")
 expand_mode = 3
 
-[node name="exit_button" type="Button" parent="exit_button_texture" unique_id=844086580]
+[node name="exit_button" type="Button" parent="exit_button_texture" unique_id=692863972]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,6 +146,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_48ojb")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("8_fb6cq")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [node name="credits_texture" type="Sprite2D" parent="." unique_id=557889269 groups=["color_dark"]]
 clip_children = 2
@@ -152,13 +155,15 @@ position = Vector2(800, 480)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_n35ux")
 
-[node name="credits_button" type="Button" parent="credits_texture" unique_id=1051478101]
+[node name="credits_button" type="Button" parent="credits_texture" unique_id=953617329]
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
 theme = ExtResource("6_48ojb")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("8_fb6cq")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [node name="credits" type="ColorRect" parent="." unique_id=2017589724]
 visible = false
@@ -302,7 +307,7 @@ theme = ExtResource("6_48ojb")
 texture = ExtResource("7_n35ux")
 expand_mode = 3
 
-[node name="credits_exit_button" type="Button" parent="credits/credits_exit_button_texture" unique_id=265723203]
+[node name="credits_exit_button" type="Button" parent="credits/credits_exit_button_texture" unique_id=516904784]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -311,6 +316,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_48ojb")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("8_fb6cq")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [connection signal="pressed" from="exit_button_texture/exit_button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="credits_texture/credits_button" to="." method="_on_credits_button_pressed"]

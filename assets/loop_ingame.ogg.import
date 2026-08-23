@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://djxcgmwagks68"
+uid="uid://c446ca7yo0xlh"
 path="res://.godot/imported/loop_ingame.ogg-ef460efaab13382001ec0cd8c9d5436e.oggvorbisstr"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/loop_ingame.ogg-ef460efaab13382001ec0cd8c9d54
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

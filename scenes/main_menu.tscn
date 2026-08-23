@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dcw31nj5gq5ww" path="res://assets/arrow-back-simple.svg" id="3_wu84c"]
 [ext_resource type="Texture2D" uid="uid://d3hy58bjkvv8d" path="res://assets/sliders.svg" id="4_8ln24"]
 [ext_resource type="Theme" uid="uid://d1cb6v5m03epb" path="res://resources/default_theme.tres" id="4_rtw2f"]
+[ext_resource type="Script" uid="uid://7tasog3xmy2f" path="res://scripts/sfx_button.gd" id="6_oa1go"]
 
 [sub_resource type="FontVariation" id="FontVariation_ru7vt"]
 base_font = ExtResource("2_ekxnf")
@@ -264,7 +265,7 @@ scale = Vector2(0.33333325, 0.3333334)
 texture = ExtResource("3_wu84c")
 flip_h = true
 
-[node name="play_button" type="Button" parent="play_texture" unique_id=1599183129 groups=["color_normal"]]
+[node name="play_button" type="Button" parent="play_texture" unique_id=1273397985 groups=["color_normal"]]
 self_modulate = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
 offset_left = -96.0
 offset_top = -96.0
@@ -273,6 +274,8 @@ offset_bottom = -72.0
 scale = Vector2(8, 8)
 theme = ExtResource("4_rtw2f")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("6_oa1go")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 metadata/_edit_use_anchors_ = true
 
 [node name="settings_texture" type="Sprite2D" parent="." unique_id=1053685786 groups=["color_dark"]]
@@ -282,7 +285,7 @@ position = Vector2(896, 320.00003)
 scale = Vector2(0.33333334, 0.33333334)
 texture = ExtResource("4_8ln24")
 
-[node name="settings_button" type="Button" parent="settings_texture" unique_id=202735925 groups=["color_normal"]]
+[node name="settings_button" type="Button" parent="settings_texture" unique_id=1552191196 groups=["color_normal"]]
 self_modulate = Color(0.55433947, 6.256998e-07, 0.31423837, 1)
 offset_left = -96.0
 offset_top = -96.0
@@ -291,6 +294,8 @@ offset_bottom = -72.00001
 scale = Vector2(8, 8)
 theme = ExtResource("4_rtw2f")
 theme_type_variation = &"ButtonFullWhite"
+script = ExtResource("6_oa1go")
+metadata/_custom_type_script = "uid://7tasog3xmy2f"
 
 [node name="flash" type="ColorRect" parent="." unique_id=620213801]
 visible = false
