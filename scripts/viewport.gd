@@ -23,11 +23,14 @@ func show_transition():
 	$transition_layer/animation_player.play("transition")
 	await $transition_layer/animation_player.animation_finished
 	if can_show_ad:
+		AudioHandler.playing_ad = true
+		AudioHandler.update_settings(false)
 		var result = await CrazyGames.Ad.request_ad_async("midgame")
 		print(result)
 		can_show_ad = false
 		get_tree().create_timer(240).timeout.connect(func(): can_show_ad = true)
-
+		AudioHandler.playing_ad = false
+		AudioHandler.update_settings(false)
 	transition_midpoint.emit()
 	await transition_continue
 	$transition_layer/transition_rect.rotation = PI

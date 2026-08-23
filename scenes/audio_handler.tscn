@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://copjkl4e40e8e"]
+
+[ext_resource type="Script" uid="uid://bsnt5erxywtva" path="res://scripts/audio_handler.gd" id="1_hk86o"]
+[ext_resource type="AudioStream" uid="uid://clxphgpb6v354" path="res://assets/loop_menu.ogg" id="2_7fwcy"]
+[ext_resource type="AudioStream" uid="uid://djxcgmwagks68" path="res://assets/loop_ingame.ogg" id="3_11bbw"]
+
+[node name="AudioHandler" type="AudioStreamPlayer" unique_id=1397479363]
+script = ExtResource("1_hk86o")
+
+[node name="loop_menu" type="AudioStreamPlayer" parent="." unique_id=282120619]
+stream = ExtResource("2_7fwcy")
+autoplay = true
+bus = &"music"
+
+[node name="loop_ingame" type="AudioStreamPlayer" parent="." unique_id=2142408425]
+stream = ExtResource("3_11bbw")
+autoplay = true
+bus = &"music"

@@ -15,6 +15,10 @@ run/main_scene="uid://5i8mi5c6xt6d"
 config/features=PackedStringArray("4.7")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://b8vs3xxwo1uvc"
+
 [autoload]
 
 View="*uid://bo571aglf8wjl"
@@ -22,6 +26,7 @@ ColorPalettes="*uid://u8a2ufdjts2o"
 SettingsHandler="*uid://uh18fhsr4lyr"
 CrazyGamesBridge="*uid://earhbes0vc0y"
 CrazyGames="*uid://dfjykmtiljrj5"
+AudioHandler="*uid://copjkl4e40e8e"
 
 [display]
 

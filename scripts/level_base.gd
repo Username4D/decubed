@@ -8,6 +8,7 @@ var timer_active = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CrazyGames.Game.gameplay_start()
+	AudioHandler.ingame = true
 	for i in $checkers.get_children():
 		i.update_status.connect(refresh_checkers_status)
 	refresh_checkers_status()
@@ -45,6 +46,7 @@ func _on_player_death() -> void:
 
 
 func _on_menu_button_pressed() -> void:
+	AudioHandler.ingame = false
 	CrazyGames.Game.gameplay_stop()
 	View.show_transition()
 	await View.transition_midpoint
@@ -80,6 +82,7 @@ func time_to_string(time: float):
 
 func _on_exit_button_pressed() -> void:
 	CrazyGames.Game.gameplay_stop()
+	AudioHandler.ingame = false
 	View.show_transition()
 	await View.transition_midpoint
 	await get_tree().process_frame
