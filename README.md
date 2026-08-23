@@ -1,6 +1,6 @@
 # Decubed
 
-Decubed is a platformer webgame made in godot.
+Decubed is a platformer webgame made in godot. In the game you control a cube, trying to complete 40 unique levels without dying. The game also contains a speedrun mode challenging the player to beat it as fast as possible.
 
 ## Editing:
 
