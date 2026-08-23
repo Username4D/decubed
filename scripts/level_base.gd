@@ -5,6 +5,8 @@ extends Node2D
 var checkers_allow_finish = true
 var label_position_y = 0
 var timer_active = true
+
+@export var timer_enabled = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CrazyGames.Game.gameplay_start()
@@ -27,7 +29,7 @@ func _process(delta: float) -> void:
 	label_position_y += delta * 2
 	$camera.zoom.y = $camera.zoom.x
 	$finish.modulate.a = move_toward($finish.modulate.a, 1 if checkers_allow_finish else 0, delta * 3)
-	if timer_active: SettingsHandler.timer_passed_time += delta
+	if timer_active and timer_enabled: SettingsHandler.timer_passed_time += delta
 	time_to_string(SettingsHandler.timer_passed_time)
 	
 

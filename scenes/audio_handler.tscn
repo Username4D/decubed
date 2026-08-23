@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c446ca7yo0xlh" path="res://assets/loop_ingame.ogg" id="3_11bbw"]
 
 [node name="AudioHandler" type="AudioStreamPlayer" unique_id=1397479363]
+bus = &"sfx"
 script = ExtResource("1_hk86o")
 
 [node name="loop_menu" type="AudioStreamPlayer" parent="." unique_id=282120619]

@@ -39,7 +39,7 @@ texture_mode = 1
 sharp_limit = 0.0
 
 [node name="particles" type="CPUParticles2D" parent="." unique_id=578448025]
-self_modulate = Color(0.14901961, 0, 0.16470589, 0)
+self_modulate = Color(1, 1, 1, 0)
 scale = Vector2(2, 2)
 amount = 32
 texture = ExtResource("3_daydw")

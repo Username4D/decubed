@@ -27,13 +27,12 @@ func init() -> void:
 
 
 func _ready() -> void:
-	self.volume_linear = 4
-	self.bus = "sfx"
+	self.volume_linear = 1
 	await CrazyGames.is_initialised_async()
 	update_settings(true)
 
 func play_sfx(name: String):
-	playback.play_stream(streams[name])
+	playback.play_stream(streams[name], 0, 0, 1.0, AudioServer.PLAYBACK_TYPE_DEFAULT, "sfx")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,10 +40,11 @@ func _process(delta: float) -> void:
 	AudioServer.set_bus_volume_linear(0, move_toward(AudioServer.get_bus_volume_linear(0), expected_master_volume, delta))
 	AudioServer.set_bus_volume_linear(1, SettingsHandler.settings["music_volume"])
 	AudioServer.set_bus_volume_linear(2, SettingsHandler.settings["sfx_volume"])
+	print(AudioServer.get_bus_volume_linear(2))
 func update_settings(loop: bool):
 	var settings = CrazyGames.Game.get_game_settings()
 	expected_master_volume = 0 if settings["muteAudio"] or playing_ad else 1
-	if loop: get_tree().create_timer(0.2).timeout.connect(func(): update_settings(true))
+	if loop: get_tree().create_timer(0.35).timeout.connect(func(): update_settings(true))
 
 
 func _input(event: InputEvent) -> void:
