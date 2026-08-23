@@ -8,7 +8,7 @@ Decubed was made using godot 4.7.1.stable and should be edited using that versio
 
 ## Dependencies:
 
-The game requires the crazygames sdk which can be downloaded from the godot asset store.
+The game requires the crazygames sdk which can be downloaded from the godot asset store. It uses version 1.0.2 of the sdk, older versions or versions from the asset library are untested and might be incompatible.
 
 ## Playing the game:
 
